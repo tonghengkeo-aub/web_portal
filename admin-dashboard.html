@@ -10,7 +10,225 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261025_darkv4">
+  <style>
+    /* Dark Mode Overrides for Table Headers and Toolbars */
+    body.dark-mode .table-header-custom,
+    [data-bs-theme="dark"] .table-header-custom,
+    html[data-bs-theme="dark"] .table-header-custom {
+      background-color: #111827 !important;
+      background: #111827 !important;
+      border-bottom: 1px solid #1f2937 !important;
+      color: #f1f5f9 !important;
+    }
+    body.dark-mode .table-card,
+    [data-bs-theme="dark"] .table-card,
+    html[data-bs-theme="dark"] .table-card {
+      background-color: #111827 !important;
+      background: #111827 !important;
+      border-color: #1f2937 !important;
+    }
+    body.dark-mode .table-header-custom h5,
+    body.dark-mode .table-header-custom h4,
+    body.dark-mode .table-header-custom h6,
+    [data-bs-theme="dark"] .table-header-custom h5,
+    [data-bs-theme="dark"] .table-header-custom h4,
+    [data-bs-theme="dark"] .table-header-custom h6 {
+      color: #ffffff !important;
+    }
+    body.dark-mode .table-header-custom small,
+    body.dark-mode .table-header-custom .text-muted,
+    [data-bs-theme="dark"] .table-header-custom small,
+    [data-bs-theme="dark"] .table-header-custom .text-muted {
+      color: #94a3b8 !important;
+    }
+    body.dark-mode .table-header-custom .text-dark,
+    [data-bs-theme="dark"] .table-header-custom .text-dark {
+      color: #f8fafc !important;
+    }
+    body.dark-mode #customerFilterGroup .btn-dark,
+    body.dark-mode #customerFilterGroup .btn-dark.active,
+    [data-bs-theme="dark"] #customerFilterGroup .btn-dark,
+    [data-bs-theme="dark"] #customerFilterGroup .btn-dark.active {
+      background-color: #2563eb !important;
+      border-color: #3b82f6 !important;
+      color: #ffffff !important;
+    }
+    body.dark-mode #customerFilterGroup .btn-outline-dark,
+    [data-bs-theme="dark"] #customerFilterGroup .btn-outline-dark {
+      border-color: #334155 !important;
+      background-color: #1e293b !important;
+      color: #cbd5e1 !important;
+    }
+    body.dark-mode #customerFilterGroup .btn-outline-warning,
+    [data-bs-theme="dark"] #customerFilterGroup .btn-outline-warning {
+      border-color: #d97706 !important;
+      color: #fbbf24 !important;
+    }
+    body.dark-mode #customerFilterGroup .btn-outline-warning:hover,
+    body.dark-mode #customerFilterGroup .btn-warning,
+    [data-bs-theme="dark"] #customerFilterGroup .btn-outline-warning:hover,
+    [data-bs-theme="dark"] #customerFilterGroup .btn-warning {
+      background-color: #d97706 !important;
+      border-color: #f59e0b !important;
+      color: #ffffff !important;
+    }
+
+    /* SweetAlert2 & Modal Overrides in Dark Mode */
+    body.dark-mode .swal2-container,
+    [data-bs-theme="dark"] .swal2-container {
+      background: rgba(15, 23, 42, 0.75) !important;
+      backdrop-filter: blur(5px) !important;
+    }
+    body.dark-mode .swal2-popup,
+    [data-bs-theme="dark"] .swal2-popup {
+      background-color: #111827 !important;
+      background: #111827 !important;
+      color: #f1f5f9 !important;
+      border: 1px solid #1f2937 !important;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+      border-radius: 18px !important;
+    }
+    body.dark-mode .swal2-title,
+    [data-bs-theme="dark"] .swal2-title {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    body.dark-mode .swal2-html-container,
+    [data-bs-theme="dark"] .swal2-html-container {
+      color: #cbd5e1 !important;
+    }
+    body.dark-mode .swal2-popup .bg-light,
+    body.dark-mode .modal-content .bg-light,
+    [data-bs-theme="dark"] .swal2-popup .bg-light,
+    [data-bs-theme="dark"] .modal-content .bg-light {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      border-radius: 12px !important;
+      color: #f1f5f9 !important;
+    }
+    body.dark-mode .swal2-popup .bg-light .text-dark,
+    body.dark-mode .modal-content .bg-light .text-dark,
+    [data-bs-theme="dark"] .swal2-popup .bg-light .text-dark,
+    [data-bs-theme="dark"] .modal-content .bg-light .text-dark {
+      color: #f8fafc !important;
+    }
+    body.dark-mode .swal2-popup hr,
+    body.dark-mode .modal-content hr,
+    [data-bs-theme="dark"] .swal2-popup hr,
+    [data-bs-theme="dark"] .modal-content hr {
+      border-color: #334155 !important;
+      opacity: 0.4;
+    }
+    body.dark-mode .swal2-styled.swal2-cancel,
+    [data-bs-theme="dark"] .swal2-styled.swal2-cancel {
+      background-color: #1e293b !important;
+      border: 1px solid #334155 !important;
+      color: #cbd5e1 !important;
+      border-radius: 10px !important;
+    }
+    body.dark-mode .swal2-styled.swal2-cancel:hover,
+    [data-bs-theme="dark"] .swal2-styled.swal2-cancel:hover {
+      background-color: #334155 !important;
+      color: #ffffff !important;
+    }
+    body.dark-mode .swal2-styled.swal2-confirm,
+    [data-bs-theme="dark"] .swal2-styled.swal2-confirm {
+      border-radius: 10px !important;
+    }
+    body.dark-mode .alert-warning,
+    body.dark-mode .bg-warning.bg-opacity-10,
+    [data-bs-theme="dark"] .alert-warning,
+    [data-bs-theme="dark"] .bg-warning.bg-opacity-10 {
+      background-color: rgba(245, 158, 11, 0.14) !important;
+      border: 1px solid rgba(245, 158, 11, 0.35) !important;
+      color: #fef08a !important;
+      border-radius: 10px !important;
+    }
+    body.dark-mode .alert-warning *,
+    body.dark-mode .bg-warning.bg-opacity-10 *,
+    [data-bs-theme="dark"] .alert-warning *,
+    [data-bs-theme="dark"] .bg-warning.bg-opacity-10 * {
+      color: #fef08a !important;
+    }
+    body.dark-mode .alert-warning strong,
+    body.dark-mode .bg-warning.bg-opacity-10 strong,
+    [data-bs-theme="dark"] .alert-warning strong,
+    [data-bs-theme="dark"] .bg-warning.bg-opacity-10 strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    body.dark-mode .alert-warning .text-warning,
+    [data-bs-theme="dark"] .alert-warning .text-warning {
+      color: #fbbf24 !important;
+    }
+    body.dark-mode .alert-success,
+    body.dark-mode .bg-success.bg-opacity-10,
+    [data-bs-theme="dark"] .alert-success,
+    [data-bs-theme="dark"] .bg-success.bg-opacity-10 {
+      background-color: rgba(16, 185, 129, 0.14) !important;
+      border: 1px solid rgba(16, 185, 129, 0.35) !important;
+      color: #a7f3d0 !important;
+      border-radius: 10px !important;
+    }
+    body.dark-mode .alert-success *,
+    body.dark-mode .bg-success.bg-opacity-10 *,
+    [data-bs-theme="dark"] .alert-success *,
+    [data-bs-theme="dark"] .bg-success.bg-opacity-10 * {
+      color: #a7f3d0 !important;
+    }
+    body.dark-mode .alert-success strong,
+    body.dark-mode .bg-success.bg-opacity-10 strong,
+    [data-bs-theme="dark"] .alert-success strong,
+    [data-bs-theme="dark"] .bg-success.bg-opacity-10 strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    body.dark-mode .alert-info,
+    body.dark-mode .bg-info.bg-opacity-10,
+    [data-bs-theme="dark"] .alert-info,
+    [data-bs-theme="dark"] .bg-info.bg-opacity-10 {
+      background-color: rgba(14, 165, 233, 0.14) !important;
+      border: 1px solid rgba(14, 165, 233, 0.35) !important;
+      color: #bae6fd !important;
+      border-radius: 10px !important;
+    }
+    body.dark-mode .alert-info *,
+    body.dark-mode .bg-info.bg-opacity-10 *,
+    [data-bs-theme="dark"] .alert-info *,
+    [data-bs-theme="dark"] .bg-info.bg-opacity-10 * {
+      color: #bae6fd !important;
+    }
+    body.dark-mode .alert-info strong,
+    body.dark-mode .bg-info.bg-opacity-10 strong,
+    [data-bs-theme="dark"] .alert-info strong,
+    [data-bs-theme="dark"] .bg-info.bg-opacity-10 strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    body.dark-mode .alert-danger,
+    body.dark-mode .bg-danger.bg-opacity-10,
+    [data-bs-theme="dark"] .alert-danger,
+    [data-bs-theme="dark"] .bg-danger.bg-opacity-10 {
+      background-color: rgba(239, 68, 68, 0.14) !important;
+      border: 1px solid rgba(239, 68, 68, 0.35) !important;
+      color: #fca5a5 !important;
+      border-radius: 10px !important;
+    }
+    body.dark-mode .alert-danger *,
+    body.dark-mode .bg-danger.bg-opacity-10 *,
+    [data-bs-theme="dark"] .alert-danger *,
+    [data-bs-theme="dark"] .bg-danger.bg-opacity-10 * {
+      color: #fca5a5 !important;
+    }
+    body.dark-mode .alert-danger strong,
+    body.dark-mode .bg-danger.bg-opacity-10 strong,
+    [data-bs-theme="dark"] .alert-danger strong,
+    [data-bs-theme="dark"] .bg-danger.bg-opacity-10 strong {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -22,11 +240,14 @@
       <div class="brand-icon">
         <i class="fa-solid fa-hotel"></i>
       </div>
+
       <div>
         <h6 class="mb-0 fw-bold text-white text-truncate" style="max-width: 170px;" id="sidebarHotelTitle">Grand Luxury Hotel</h6>
         <span class="badge bg-warning text-dark mt-1" id="sidebarRoleBadge"><i class="fa-solid fa-crown me-1"></i>ADMIN / OWNER</span>
       </div>
+
     </div>
+
 
     <div class="py-3">
       <a href="#overview" class="nav-link-custom active" onclick="switchTab('overview')">
@@ -57,7 +278,13 @@
         <i class="fa-solid fa-sliders"></i>
         <span>Hotel Profile &amp; Info</span>
       </a>
+      <a href="#reviews" class="nav-link-custom" onclick="switchTab('reviews')">
+        <i class="fa-solid fa-star text-warning"></i>
+        <span>Reviews &amp; Ratings</span>
+        <span class="badge bg-warning text-dark ms-auto" id="reviewsCountBadge">0</span>
+      </a>
     </div>
+
 
     <div class="mt-auto p-3 position-absolute bottom-0 w-100" style="border-top: 1px solid rgba(255,255,255,0.08);">
       <button class="btn btn-outline-danger w-100 btn-sm d-flex align-items-center justify-content-center gap-2" onclick="logout()">
@@ -65,6 +292,7 @@
         <span>Sign Out</span>
       </button>
     </div>
+
   </aside>
 
   <!-- Main Content Area -->
@@ -75,6 +303,7 @@
         <h4 class="mb-1 fw-bold text-slate-900" id="pageTitle">Hotel Owner &amp; Admin Command Center</h4>
         <p class="text-muted small mb-0"><i class="fa-solid fa-location-dot text-danger me-1"></i><span id="topbarHotelAddress">Riverside Blvd, Daun Penh, Phnom Penh, Cambodia</span></p>
       </div>
+
       <div class="d-flex align-items-center gap-3">
         <!-- Dark / Light Mode Toggle Button -->
         <button class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center shadow-none border" 
@@ -111,6 +340,7 @@
                 <i class="fa-regular fa-bell-slash mb-1 d-block text-secondary"></i>
                 No new alerts
               </div>
+
             </li>
             <li><hr class="dropdown-divider my-1"></li>
             <li>
@@ -120,6 +350,7 @@
             </li>
           </ul>
         </div>
+
 
         <!-- Admin Profile Dropdown -->
         <div class="dropdown">
@@ -136,6 +367,7 @@
               <span class="fw-bold text-slate-800 small" id="adminName">Admin</span>
               <i class="fa-solid fa-chevron-down text-muted" style="font-size: 11px;"></i>
             </div>
+
           </button>
           <ul class="dropdown-menu dropdown-menu-end shadow-sm border p-2" style="min-width: 230px; border-radius: 12px;" aria-labelledby="adminDropdownBtn">
             <li class="px-2 py-1">
@@ -166,7 +398,9 @@
             </li>
           </ul>
         </div>
+
       </div>
+
     </header>
 
     <!-- SECTION 1: OVERVIEW & STATS -->
@@ -178,14 +412,19 @@
               <div>
                 <span class="text-muted small fw-semibold text-uppercase">Total Rooms</span>
                 <div class="stat-number text-dark" id="statRooms">-</div>
-                <small class="text-success"><span id="statAvailableRooms">-</span> Active &amp; Ready</small>
+                <small class="text-muted" id="statRoomsSubtext"><span id="statAvailableRooms" class="text-success fw-bold">-</span> Active &amp; Ready</small>
               </div>
+
               <div class="stat-icon-wrapper bg-primary-subtle text-primary">
                 <i class="fa-solid fa-bed"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <div class="col-xl-3 col-md-6">
           <div class="stat-card">
@@ -193,14 +432,19 @@
               <div>
                 <span class="text-muted small fw-semibold text-uppercase">Customer Bookings</span>
                 <div class="stat-number text-info" id="statBookings">-</div>
-                <small class="text-success"><span id="statConfirmedBookings">-</span> Confirmed Stays</small>
+                <small class="text-muted" id="statBookingsSubtext"><span id="statConfirmedBookings" class="text-success fw-bold">-</span> Confirmed Stays</small>
               </div>
+
               <div class="stat-icon-wrapper bg-info-subtle text-info">
                 <i class="fa-solid fa-calendar-check"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <div class="col-xl-3 col-md-6">
           <div class="stat-card">
@@ -210,12 +454,17 @@
                 <div class="stat-number text-warning" id="statPendingBookings">-</div>
                 <small class="text-muted">Requires Owner Confirmation</small>
               </div>
+
               <div class="stat-icon-wrapper bg-warning-subtle text-warning">
                 <i class="fa-solid fa-clock"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
 
         <div class="col-xl-3 col-md-6">
           <div class="stat-card">
@@ -225,13 +474,19 @@
                 <div class="stat-number text-success">$<span id="statRevenue">-</span></div>
                 <small class="text-muted"><span id="statRevenueKhr">-</span> KHR</small>
               </div>
+
               <div class="stat-icon-wrapper bg-success-subtle text-success">
                 <i class="fa-solid fa-sack-dollar"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
 
       <!-- Quick Alert Banner -->
       <div id="pendingActionAlert" class="alert alert-warning border-0 shadow-sm d-flex align-items-center justify-content-between p-3 mb-4 rounded-3 d-none">
@@ -241,29 +496,54 @@
             <h6 class="fw-bold mb-0" id="alertTitle">Pending Actions Require Your Attention</h6>
             <span class="small text-secondary" id="alertSubtext">Customer bookings are awaiting your owner approval.</span>
           </div>
+
         </div>
+
         <button class="btn btn-warning btn-sm fw-semibold" onclick="switchTab('bookings')">Review Bookings</button>
       </div>
+
 
       <!-- Chart and Room Summary -->
       <div class="row g-4 mb-4">
         <div class="col-lg-8">
           <div class="table-card p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h6 class="fw-bold mb-0">Hotel Revenue &amp; Bookings Growth (2026)</h6>
-              <span class="badge bg-light text-dark border">Hotel Direct Performance</span>
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+              <div>
+                <h6 class="fw-bold mb-0" id="revChartHeading"><i class="fa-solid fa-chart-line text-warning me-2"></i> Hotel Revenue &amp; Bookings Growth</h6>
+                <small class="text-muted" id="revChartSubtitle">Real-time daily &amp; time performance</small>
+              </div>
+
+              <div class="d-flex align-items-center gap-1 bg-light p-1 rounded-3 border">
+                <button type="button" class="btn btn-sm btn-gold active fw-semibold shadow-sm" id="btnChartDaily" onclick="changeChartTimeframe('daily')">
+                  <i class="fa-solid fa-calendar-day me-1"></i> By Day (7 Days)
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold border-0" id="btnChartHourly" onclick="changeChartTimeframe('hourly')">
+                  <i class="fa-solid fa-clock me-1"></i> Today by Time
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary fw-semibold border-0" id="btnChartMonthly" onclick="changeChartTimeframe('monthly')">
+                  <i class="fa-solid fa-calendar-days me-1"></i> Monthly
+                </button>
+              </div>
+
             </div>
+
             <canvas id="revenueChart" height="130"></canvas>
           </div>
+
         </div>
+
         <div class="col-lg-4">
           <div class="table-card p-4">
             <h6 class="fw-bold mb-3">Room Booking Distribution</h6>
             <canvas id="roomTypeChart" height="240"></canvas>
           </div>
+
         </div>
+
       </div>
+
     </div>
+
 
     <!-- SECTION 2: GUEST BOOKINGS (APPROVE, CHECK-IN, COMPLETE, REJECT) -->
     <div id="section-bookings" class="tab-section d-none">
@@ -273,6 +553,7 @@
             <h5 class="fw-bold mb-0"><i class="fa-solid fa-calendar-check text-primary me-2"></i> Hotel Guest Reservations &amp; Approvals</h5>
             <small class="text-muted">Approve incoming customer bookings, manage guest check-ins, or complete stays.</small>
           </div>
+
           <div class="d-flex gap-2">
             <input type="text" id="bookingSearchInput" class="form-control form-control-sm" placeholder="Search by Code, Guest name, or Phone..." oninput="filterBookingsTable()">
             <select class="form-select form-select-sm" id="bookingFilterStatus" onchange="filterBookingsTable()" style="width: 175px;">
@@ -284,11 +565,14 @@
               <option value="CANCELLED">Cancelled</option>
             </select>
           </div>
+
         </div>
+
         <div class="table-responsive">
           <table class="table custom-table mb-0">
             <thead>
               <tr>
+                <th style="width: 70px;" class="text-center"># ID</th>
                 <th>Booking Code</th>
                 <th>Guest Information</th>
                 <th>Room Type &amp; Room #</th>
@@ -300,13 +584,16 @@
             </thead>
             <tbody id="bookingsTableBody">
               <tr>
-                <td colspan="7" class="text-center py-4 text-muted">Loading hotel reservations...</td>
+                <td colspan="8" class="text-center py-4 text-muted">Loading hotel reservations...</td>
               </tr>
             </tbody>
           </table>
         </div>
+
       </div>
+
     </div>
+
 
     <!-- SECTION 3: MANAGE ROOMS (CRUD) -->
     <div id="section-rooms" class="tab-section d-none">
@@ -315,11 +602,13 @@
           <h5 class="fw-bold mb-1"><i class="fa-solid fa-bed text-warning me-2"></i> Room Inventory Management</h5>
           <p class="text-muted small mb-0">Create new rooms, update pricing (USD &amp; KHR), change bed configurations, and adjust availability.</p>
         </div>
+
         <button class="btn btn-gold d-flex align-items-center gap-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#roomModal" onclick="openAddRoomModal()">
           <i class="fa-solid fa-plus"></i>
           <span>Add New Room</span>
         </button>
       </div>
+
 
       <!-- Room Inventory Search, Sort & Quick Filter Toolbar -->
       <div class="card border-0 shadow-sm mb-4" style="border-radius: 14px; background: #ffffff;">
@@ -336,7 +625,9 @@
                   <i class="fa-solid fa-xmark"></i>
                 </button>
               </div>
+
             </div>
+
 
             <!-- Sort Selector -->
             <div class="col-lg-3 col-md-6">
@@ -351,7 +642,9 @@
                   <option value="rating-desc">⭐ Rating: Highest First</option>
                 </select>
               </div>
+
             </div>
+
 
             <!-- Filter by Room Type -->
             <div class="col-lg-3 col-md-6">
@@ -371,7 +664,9 @@
                   <option value="VIP">VIP Room</option>
                 </select>
               </div>
+
             </div>
+
 
             <!-- Filter by Status -->
             <div class="col-lg-2 col-md-6">
@@ -383,7 +678,9 @@
                 <option value="MAINTENANCE">🔴 Maintenance</option>
               </select>
             </div>
+
           </div>
+
 
           <!-- Quick Room Number Chips & Live Summary Row -->
           <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-3 pt-2 border-top">
@@ -392,18 +689,26 @@
               <div id="roomNumberQuickChips" class="d-flex flex-wrap gap-1">
                 <!-- Dynamically populated with badges: [All] [101] [102] [201] [301]... -->
               </div>
+
             </div>
+
             <div class="small text-muted" id="roomFilterSummaryText">
               Showing <strong>0</strong> rooms
             </div>
+
           </div>
+
         </div>
+
       </div>
+
 
       <div class="row g-4" id="roomsGrid">
         <!-- Rendered dynamically -->
       </div>
+
     </div>
+
 
     <!-- SECTION 4: USER CONTROL (CUSTOMER MANAGEMENT) -->
     <div id="section-users" class="tab-section d-none">
@@ -413,12 +718,15 @@
           <h5 class="fw-bold mb-1"><i class="fa-solid fa-users text-info me-2"></i> User Control (Customer Management)</h5>
           <p class="text-muted small mb-0">Manage registered hotel guests, approve booking eligibility, and monitor customer accounts.</p>
         </div>
+
         <div class="d-flex align-items-center gap-2">
           <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 fs-6">
             <i class="fa-solid fa-user-check me-1"></i> Customer Control Center
           </span>
         </div>
+
       </div>
+
 
       <!-- Customer Summary Stat Cards -->
       <div class="row g-3 mb-4">
@@ -429,12 +737,17 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Total Customers</small>
                 <h4 class="fw-bold text-dark mb-0 mt-1" id="custStatTotal">0</h4>
               </div>
+
               <div class="rounded-circle bg-info bg-opacity-10 text-info p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-users"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="col-xl-3 col-sm-6">
           <div class="stat-card p-3 border-0 shadow-sm" style="border-radius: 12px; background: #ffffff;">
             <div class="d-flex align-items-center justify-content-between">
@@ -442,12 +755,17 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Approved Guests</small>
                 <h4 class="fw-bold text-success mb-0 mt-1" id="custStatApproved">0</h4>
               </div>
+
               <div class="rounded-circle bg-success bg-opacity-10 text-success p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-user-check"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="col-xl-3 col-sm-6">
           <div class="stat-card p-3 border-0 shadow-sm" style="border-radius: 12px; background: #ffffff;">
             <div class="d-flex align-items-center justify-content-between">
@@ -455,12 +773,17 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Pending Approval</small>
                 <h4 class="fw-bold text-warning mb-0 mt-1" id="custStatPending">0</h4>
               </div>
+
               <div class="rounded-circle bg-warning bg-opacity-10 text-warning p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-user-clock"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="col-xl-3 col-sm-6">
           <div class="stat-card p-3 border-0 shadow-sm" style="border-radius: 12px; background: #ffffff;">
             <div class="d-flex align-items-center justify-content-between">
@@ -468,13 +791,19 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Suspended Accounts</small>
                 <h4 class="fw-bold text-danger mb-0 mt-1" id="custStatSuspended">0</h4>
               </div>
+
               <div class="rounded-circle bg-danger bg-opacity-10 text-danger p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-user-slash"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
 
       <!-- Customer Search & Filter Toolbar -->
       <div class="table-card mb-4 shadow-sm">
@@ -488,21 +817,26 @@
               <button type="button" class="btn btn-sm btn-outline-success px-3 rounded-pill fw-semibold" onclick="setCustomerStatusFilter('APPROVED', this)" id="btnCustFilterApproved">
                 <i class="fa-solid fa-circle-check me-1"></i> Approved <span class="badge bg-success text-white ms-1" id="custBadgeApproved">0</span>
               </button>
-              <button type="button" class="btn btn-sm btn-outline-warning text-dark px-3 rounded-pill fw-semibold" onclick="setCustomerStatusFilter('PENDING', this)" id="btnCustFilterPending">
+              <button type="button" class="btn btn-sm btn-outline-warning px-3 rounded-pill fw-semibold" onclick="setCustomerStatusFilter('PENDING', this)" id="btnCustFilterPending">
                 <i class="fa-solid fa-clock me-1"></i> Pending <span class="badge bg-warning text-dark ms-1" id="custBadgePending">0</span>
               </button>
               <button type="button" class="btn btn-sm btn-outline-danger px-3 rounded-pill fw-semibold" onclick="setCustomerStatusFilter('SUSPENDED', this)" id="btnCustFilterSuspended">
                 <i class="fa-solid fa-user-slash me-1"></i> Suspended <span class="badge bg-danger text-white ms-1" id="custBadgeSuspended">0</span>
               </button>
             </div>
+
           </div>
+
           <div class="d-flex gap-2 flex-grow-1 justify-content-end" style="max-width: 380px;">
             <div class="input-group input-group-sm">
               <span class="input-group-text bg-light border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
               <input type="text" id="customerSearchInput" class="form-control bg-light border-start-0" placeholder="Search by ID, name, email, or phone..." oninput="filterCustomersTable()">
             </div>
+
           </div>
+
         </div>
+
         <div class="table-responsive">
           <table class="table custom-table mb-0 align-middle">
             <thead>
@@ -523,8 +857,11 @@
             </tbody>
           </table>
         </div>
+
       </div>
+
     </div>
+
 
     <!-- SECTION 5: ADMIN & STAFF ROLE MANAGEMENT -->
     <div id="section-admin-roles" class="tab-section d-none">
@@ -534,11 +871,13 @@
           <h5 class="fw-bold mb-1"><i class="fa-solid fa-user-shield text-danger me-2"></i> Administrator &amp; Role Management</h5>
           <p class="text-muted small mb-0">Create new administrators, configure role privileges, and oversee hotel staff access.</p>
         </div>
+
         <button class="btn btn-danger d-flex align-items-center gap-2 shadow-sm" onclick="openCreateAdminModal()">
           <i class="fa-solid fa-user-plus"></i>
           <span>+ Create New Admin / Role</span>
         </button>
       </div>
+
 
       <!-- Role Summary Counters -->
       <div class="row g-3 mb-4">
@@ -549,12 +888,17 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Super Admins</small>
                 <h4 class="fw-bold text-danger mb-0 mt-1" id="roleStatAdmin">0</h4>
               </div>
+
               <div class="rounded-circle bg-danger bg-opacity-10 text-danger p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="col-xl-3 col-sm-6">
           <div class="stat-card p-3 border-0 shadow-sm" style="border-radius: 12px; background: #ffffff;">
             <div class="d-flex align-items-center justify-content-between">
@@ -562,12 +906,17 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Hotel Owners / GMs</small>
                 <h4 class="fw-bold text-warning mb-0 mt-1" id="roleStatOwner">0</h4>
               </div>
+
               <div class="rounded-circle bg-warning bg-opacity-10 text-warning p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-hotel"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="col-xl-3 col-sm-6">
           <div class="stat-card p-3 border-0 shadow-sm" style="border-radius: 12px; background: #ffffff;">
             <div class="d-flex align-items-center justify-content-between">
@@ -575,12 +924,17 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Operations Staff</small>
                 <h4 class="fw-bold text-primary mb-0 mt-1" id="roleStatStaff">0</h4>
               </div>
+
               <div class="rounded-circle bg-primary bg-opacity-10 text-primary p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-clipboard-user"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="col-xl-3 col-sm-6">
           <div class="stat-card p-3 border-0 shadow-sm" style="border-radius: 12px; background: #ffffff;">
             <div class="d-flex align-items-center justify-content-between">
@@ -588,13 +942,19 @@
                 <small class="text-muted text-uppercase fw-semibold" style="font-size: 11px;">Service Providers</small>
                 <h4 class="fw-bold text-info mb-0 mt-1" id="roleStatProvider">0</h4>
               </div>
+
               <div class="rounded-circle bg-info bg-opacity-10 text-info p-3 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
                 <i class="fa-solid fa-handshake"></i>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
 
       <!-- Admin & Staff Management Table -->
       <div class="table-card mb-4 shadow-sm">
@@ -609,13 +969,17 @@
               <option value="PROVIDER">Service Providers</option>
             </select>
           </div>
+
           <div class="d-flex gap-2 flex-grow-1 justify-content-end" style="max-width: 380px;">
             <div class="input-group input-group-sm">
               <span class="input-group-text bg-light border-end-0 text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
               <input type="text" id="adminSearchInput" class="form-control bg-light border-start-0" placeholder="Search admin by name, email, or role..." oninput="filterAdminsTable()">
             </div>
+
           </div>
+
         </div>
+
         <div class="table-responsive">
           <table class="table custom-table mb-0 align-middle">
             <thead>
@@ -637,7 +1001,9 @@
             </tbody>
           </table>
         </div>
+
       </div>
+
 
       <!-- Role Permissions Matrix Card -->
       <div class="card border-0 shadow-sm mb-4" style="border-radius: 14px; background: #ffffff;">
@@ -650,48 +1016,64 @@
                   <span class="badge bg-danger">ADMIN</span>
                   <strong class="text-dark small">Super Admin</strong>
                 </div>
+
                 <p class="small text-muted mb-0" style="font-size: 11.5px;">
                   Full root control: Manage all hotel settings, room inventory CRUD, customer bookings, user approvals, role assignments, and revenue reports.
                 </p>
               </div>
+
             </div>
+
             <div class="col-md-3">
               <div class="p-3 rounded-3 border h-100" style="background: rgba(245, 158, 11, 0.04); border-color: rgba(245, 158, 11, 0.2) !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
                   <span class="badge bg-warning text-dark">HOTEL_OWNER</span>
                   <strong class="text-dark small">Hotel Manager</strong>
                 </div>
+
                 <p class="small text-muted mb-0" style="font-size: 11.5px;">
                   Hotel property management: Edit hotel details &amp; branding, add/edit/delete rooms, approve reservations, and monitor revenue.
                 </p>
               </div>
+
             </div>
+
             <div class="col-md-3">
               <div class="p-3 rounded-3 border h-100" style="background: rgba(59, 130, 246, 0.04); border-color: rgba(59, 130, 246, 0.2) !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
                   <span class="badge bg-primary">STAFF</span>
                   <strong class="text-dark small">Frontdesk &amp; Ops</strong>
                 </div>
+
                 <p class="small text-muted mb-0" style="font-size: 11.5px;">
                   Day-to-day operations: Process guest check-in &amp; check-out, view reservations, and inspect room availability status.
                 </p>
               </div>
+
             </div>
+
             <div class="col-md-3">
               <div class="p-3 rounded-3 border h-100" style="background: rgba(168, 85, 247, 0.04); border-color: rgba(168, 85, 247, 0.2) !important;">
                 <div class="d-flex align-items-center gap-2 mb-2">
                   <span class="badge bg-info text-white">PROVIDER</span>
                   <strong class="text-dark small">Service Partner</strong>
                 </div>
+
                 <p class="small text-muted mb-0" style="font-size: 11.5px;">
                   Partner experiences: Coordinate hotel amenities, transport services, tours, and guest special requests.
                 </p>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
 
     <!-- SECTION 5: HOTEL PROFILE & INFO -->
     <div id="section-hotel-profile" class="tab-section d-none">
@@ -704,10 +1086,12 @@
                 <h5 class="fw-bold mb-1"><i class="fa-solid fa-hotel text-warning me-2"></i> Edit Hotel Details, Branding &amp; Facilities</h5>
                 <p class="text-muted small mb-0">Update hotel name, star rating, address, contact, and amenities. Changes sync live to the Customer Mobile App.</p>
               </div>
+
               <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">
                 <i class="fa-solid fa-mobile-screen me-1"></i> Live Mobile Sync
               </span>
             </div>
+
 
             <form id="hotelProfileForm" onsubmit="handleUpdateHotelProfile(event)">
               <div class="row g-3">
@@ -717,11 +1101,13 @@
                   <input type="text" id="profHotelName" class="form-control" required placeholder="e.g. Boss_Heng Luxury Hotel" oninput="updateLiveHotelPreview()">
                   <small class="text-muted" style="font-size: 11px;">This name appears at the top header of the customer mobile app.</small>
                 </div>
+
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Hotel Tagline / Subtitle</label>
                   <input type="text" id="profHotelTagline" class="form-control" placeholder="e.g. Premier 5-Star Riverside Retreat & Suites" oninput="updateLiveHotelPreview()">
                   <small class="text-muted" style="font-size: 11px;">Displayed beneath the hotel name on mobile app cards.</small>
                 </div>
+
 
                 <!-- Star Rating, Province, Phone, Email -->
                 <div class="col-md-3">
@@ -734,6 +1120,7 @@
                     <option value="1">★ 1-Star</option>
                   </select>
                 </div>
+
                 <div class="col-md-3">
                   <label class="form-label small fw-semibold">Province / City *</label>
                   <select id="profHotelProvince" class="form-select" required onchange="updateLiveHotelPreview()">
@@ -764,34 +1151,41 @@
                     <option value="Tboung Khmum">Tboung Khmum</option>
                   </select>
                 </div>
+
                 <div class="col-md-3">
                   <label class="form-label small fw-semibold">Contact Phone *</label>
-                  <input type="text" id="profHotelPhone" class="form-control" required placeholder="023888999" oninput="updateLiveHotelPreview()">
+                  <input type="text" id="profHotelPhone" class="form-control" required placeholder="095 727 675" oninput="updateLiveHotelPreview()">
                 </div>
+
                 <div class="col-md-3">
                   <label class="form-label small fw-semibold">Contact Email *</label>
                   <input type="email" id="profHotelEmail" class="form-control" required placeholder="info@hotel.com" oninput="updateLiveHotelPreview()">
                 </div>
+
 
                 <!-- Check-in, Check-out, Website -->
                 <div class="col-md-4">
                   <label class="form-label small fw-semibold">Check-in Time</label>
                   <input type="text" id="profHotelCheckIn" class="form-control" placeholder="02:00 PM" value="02:00 PM">
                 </div>
+
                 <div class="col-md-4">
                   <label class="form-label small fw-semibold">Check-out Time</label>
                   <input type="text" id="profHotelCheckOut" class="form-control" placeholder="12:00 PM" value="12:00 PM">
                 </div>
+
                 <div class="col-md-4">
                   <label class="form-label small fw-semibold">Official Website</label>
                   <input type="url" id="profHotelWebsite" class="form-control" placeholder="https://bosshenghotel.com">
                 </div>
+
 
                 <!-- Full Address -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold">Full Address *</label>
                   <input type="text" id="profHotelAddress" class="form-control" required placeholder="Riverside Blvd, Daun Penh, Phnom Penh" oninput="updateLiveHotelPreview()">
                 </div>
+
 
                 <!-- Google Maps Location Link -->
                 <div class="col-12">
@@ -801,6 +1195,7 @@
                     </label>
                     <span id="profMapBadge" class="badge bg-secondary-subtle text-secondary border">Location set</span>
                   </div>
+
                   <div class="input-group">
                     <span class="input-group-text bg-white text-danger"><i class="fa-solid fa-location-dot"></i></span>
                     <input type="url" id="profHotelMapUrl" class="form-control" 
@@ -815,6 +1210,7 @@
                       <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Test Map
                     </button>
                   </div>
+
                   <!-- Quick Cambodia Presets -->
                   <div class="d-flex flex-wrap align-items-center gap-1 mt-2">
                     <small class="text-muted fw-semibold me-1">Presets:</small>
@@ -835,7 +1231,9 @@
                       📍 Kampot
                     </button>
                   </div>
+
                 </div>
+
 
                 <!-- Main Hero Image URL -->
                 <div class="col-12">
@@ -844,6 +1242,7 @@
                     <span class="input-group-text bg-white text-muted"><i class="fa-solid fa-image"></i></span>
                     <input type="url" id="profHotelImage" class="form-control" required placeholder="https://images.unsplash.com/photo-..." oninput="updateLiveHotelPreview()">
                   </div>
+
                   <!-- Quick Photo Presets -->
                   <div class="d-flex flex-wrap align-items-center gap-1 mb-2">
                     <small class="text-muted fw-semibold me-1">Preset Luxury Photos:</small>
@@ -864,7 +1263,9 @@
                       + Modern Skyline
                     </button>
                   </div>
+
                 </div>
+
 
                 <!-- Facilities & Amenities -->
                 <div class="col-12">
@@ -885,7 +1286,9 @@
                     <span class="badge bg-light text-dark border py-1 px-2" style="cursor: pointer;" onclick="addProfAmenity('24/7 Room Service')">+ 24/7 Room Service</span>
                     <span class="badge bg-light text-dark border py-1 px-2" style="cursor: pointer;" onclick="addProfAmenity('Free Secure Parking')">+ Parking</span>
                   </div>
+
                 </div>
+
 
                 <!-- Property Policies -->
                 <div class="col-12">
@@ -893,21 +1296,27 @@
                   <textarea id="profHotelPolicy" class="form-control" rows="2" placeholder="e.g. Free cancellation up to 24 hours prior to arrival. Valid National ID or Passport required upon check-in. Pets not permitted."></textarea>
                 </div>
 
+
                 <!-- Hotel Description -->
                 <div class="col-12">
                   <label class="form-label small fw-semibold">Hotel Detailed Description</label>
                   <textarea id="profHotelDescription" class="form-control" rows="3" placeholder="Experience five-star luxury with riverside views, an infinity pool overlooking the Mekong river..." oninput="updateLiveHotelPreview()"></textarea>
                 </div>
 
+
                 <div class="col-12 text-end mt-4 pt-2 border-top">
                   <button type="submit" id="saveHotelBtn" class="btn btn-gold px-4 py-2 fw-semibold">
                     <i class="fa-solid fa-floppy-disk me-1"></i> Save Hotel Information
                   </button>
                 </div>
+
               </div>
+
             </form>
           </div>
+
         </div>
+
 
         <!-- Right Column: Live Customer Mobile App Preview -->
         <div class="col-lg-4">
@@ -919,8 +1328,10 @@
                   <i class="fa-solid fa-mobile-screen text-warning"></i>
                   <span class="fw-bold small">Customer Mobile App Preview</span>
                 </div>
+
                 <span class="badge bg-success" style="font-size: 10px;">Live Sync</span>
               </div>
+
 
               <!-- Mobile Top Header bar simulation (Image 1) -->
               <div class="bg-white p-3 border-bottom">
@@ -930,7 +1341,9 @@
                   <i class="fa-solid fa-circle-check text-warning" style="font-size: 14px;" title="Verified Hotel"></i>
                   <span class="badge bg-primary-subtle text-primary border ms-1" style="font-size: 9px;">Hotel Info</span>
                 </div>
+
               </div>
+
 
               <!-- Hero Image Preview -->
               <div class="position-relative" style="height: 160px; background-color: #0F172A;">
@@ -942,7 +1355,9 @@
                   <div class="small text-warning" id="prevHotelStars">★★★★★ 5-Star Hotel</div>
                   <div class="fw-bold fs-6" id="prevHotelCardName">Boss_Heng Luxury Hotel</div>
                 </div>
+
               </div>
+
 
               <div class="p-3 bg-white">
                 <p class="small text-muted mb-2" id="prevHotelTagline">Premier 5-Star Riverside Retreat &amp; Suites</p>
@@ -952,14 +1367,16 @@
                   <span id="prevHotelAddress">Riverside Blvd, Daun Penh, Phnom Penh</span>
                 </div>
 
+
                 <div class="d-flex gap-2 mb-3">
                   <span class="badge bg-light text-dark border flex-grow-1 text-center py-2" id="prevHotelPhone">
-                    <i class="fa-solid fa-phone text-success me-1"></i> 023888999
+                    <i class="fa-solid fa-phone text-success me-1"></i> 095 727 675
                   </span>
                   <span class="badge bg-light text-dark border flex-grow-1 text-center py-2 text-truncate" id="prevHotelEmail">
                     <i class="fa-solid fa-envelope text-primary me-1"></i> info@hotel.com
                   </span>
                 </div>
+
 
                 <div class="mb-2">
                   <small class="fw-semibold text-muted d-block mb-1">Featured Amenities:</small>
@@ -968,17 +1385,185 @@
                     <span class="badge bg-secondary-subtle text-secondary">Pool</span>
                     <span class="badge bg-secondary-subtle text-secondary">Spa</span>
                   </div>
+
                 </div>
+
 
                 <div class="alert alert-info py-2 px-3 mb-0 mt-3" style="font-size: 11px;">
                   <i class="fa-solid fa-circle-info me-1"></i> When you click <strong>Save Hotel Information</strong>, this name and branding will immediately show in the customer mobile app!
                 </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SECTION: CUSTOMER REVIEWS & RATINGS REPORT -->
+    <div id="section-reviews" class="tab-section d-none">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+        <div>
+          <h4 class="fw-bold mb-1"><i class="fa-solid fa-star text-warning me-2"></i>Customer Reviews &amp; Ratings Report</h4>
+          <p class="text-muted mb-0 small">Live feedback, satisfaction scores, and customer sentiment from verified completed stays.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-primary shadow-sm" id="btnRefreshReviews" onclick="loadReviewsReport()"><i class="fa-solid fa-rotate me-1"></i> Refresh Data</button>
+          <button class="btn btn-sm btn-outline-secondary shadow-sm" onclick="exportReviewsCsv()"><i class="fa-solid fa-file-csv me-1"></i> Export CSV</button>
+        </div>
+      </div>
+
+      <!-- KPI Summary Cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="text-muted small fw-semibold text-uppercase">Overall Rating</span>
+                <div class="d-flex align-items-baseline gap-2 mt-1">
+                  <div class="stat-number text-warning mb-0" id="reportAvgRating">--</div>
+                  <span class="text-muted small">/ 5.0</span>
+                </div>
+                <div class="mt-2 text-warning small" id="reportStarsRow">
+                  <i class="fa-solid fa-star text-secondary opacity-25"></i>
+                  <i class="fa-solid fa-star text-secondary opacity-25"></i>
+                  <i class="fa-solid fa-star text-secondary opacity-25"></i>
+                  <i class="fa-solid fa-star text-secondary opacity-25"></i>
+                  <i class="fa-solid fa-star text-secondary opacity-25"></i>
+                  <span class="text-muted ms-1 small" id="reportRatingDescriptor">Calculating...</span>
+                </div>
+              </div>
+              <div class="stat-icon-wrapper bg-warning-subtle text-warning">
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="text-muted small fw-semibold text-uppercase">Total Reviews</span>
+                <div class="stat-number text-info mt-1" id="reportTotalReviews">0</div>
+                <small class="text-muted"><i class="fa-solid fa-circle-check text-success me-1"></i>100% Verified Guests</small>
+              </div>
+              <div class="stat-icon-wrapper bg-info-subtle text-info">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="text-muted small fw-semibold text-uppercase">Satisfaction Rate</span>
+                <div class="stat-number text-success mt-1" id="reportSatisfactionRate">--%</div>
+                <small class="text-muted">4 &amp; 5 Star Ratings</small>
+              </div>
+              <div class="stat-icon-wrapper bg-success-subtle text-success">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="text-muted small fw-semibold text-uppercase">Recommendation</span>
+                <div class="stat-number text-primary mt-1" id="reportRecommendRate">--%</div>
+                <small class="text-muted">3+ Stars (Would Book Again)</small>
+              </div>
+              <div class="stat-icon-wrapper bg-primary-subtle text-primary">
+                <i class="fa-solid fa-heart"></i>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Rating Distribution & Quick Highlights -->
+      <div class="row g-3 mb-4">
+        <div class="col-lg-5">
+          <div class="card table-card shadow-sm p-4 h-100">
+            <h6 class="fw-bold mb-3 d-flex align-items-center justify-content-between">
+              <span><i class="fa-solid fa-chart-bar text-warning me-2"></i>Star Rating Breakdown</span>
+              <span class="badge bg-light text-dark font-monospace" id="reportTotalVotes">0 Votes</span>
+            </h6>
+            <div class="d-flex flex-column gap-2" id="reportBreakdownContainer">
+              <!-- Progress rows generated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card table-card shadow-sm p-4 h-100">
+            <h6 class="fw-bold mb-3 d-flex align-items-center justify-content-between">
+              <span><i class="fa-solid fa-tag text-primary me-2"></i>Most Praised Guest Highlights</span>
+              <span class="badge bg-light text-muted small" id="reportHighlightsCount">Live Guest Sentiment</span>
+            </h6>
+            <div class="d-flex flex-wrap gap-2 mb-3" id="reportHighlightsContainer">
+              <span class="text-muted small">Loading highlights...</span>
+            </div>
+            <p class="text-muted small mb-0 mt-auto"><i class="fa-solid fa-circle-info text-primary me-1"></i>Aggregated in real-time from tags selected by verified guests in the mobile app.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Controls & Reviews Table -->
+      <div class="card table-card shadow-sm p-4">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+          <h6 class="fw-bold mb-0"><i class="fa-solid fa-list-check text-success me-2"></i>All Customer Reviews &amp; Feedback</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <div class="input-group input-group-sm" style="width: 240px;">
+              <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+              <input type="text" id="reviewSearchInput" class="form-control" placeholder="Search customer or review..." oninput="filterReviewsTable()">
+            </div>
+            <select id="reviewStarFilter" class="form-select form-select-sm" style="width: 140px;" onchange="filterReviewsTable()">
+              <option value="ALL">All Ratings (⭐)</option>
+              <option value="5">5 Stars Only</option>
+              <option value="4">4 Stars Only</option>
+              <option value="3">3 Stars Only</option>
+              <option value="2">2 Stars Only</option>
+              <option value="1">1 Star Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table custom-table mb-0 align-middle" id="reviewsTable">
+            <thead>
+              <tr>
+                <th style="width: 50px;" class="text-center">#</th>
+                <th style="width: 220px;">Guest Customer</th>
+                <th style="width: 140px;">Rating</th>
+                <th style="width: 130px;">Stay Type</th>
+                <th style="width: 140px;">Location</th>
+                <th>Review &amp; Feedback</th>
+                <th style="width: 120px;">Date</th>
+              </tr>
+            </thead>
+            <tbody id="reviewsTableBody">
+              <tr>
+                <td colspan="7" class="text-center py-4 text-muted">
+                  <div class="spinner-border spinner-border-sm text-primary me-2"></div>Loading customer reviews...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+
   </main>
 
   <!-- ADD / EDIT ROOM MODAL -->
@@ -989,6 +1574,7 @@
           <h5 class="modal-title fw-bold" id="roomModalTitle">Add New Room</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form id="roomForm" onsubmit="handleSaveRoom(event)">
           <input type="hidden" id="editRoomId">
           <div class="modal-body p-4">
@@ -999,19 +1585,24 @@
                   <span class="input-group-text bg-light text-muted font-monospace"><i class="fa-solid fa-door-open"></i></span>
                   <input type="text" id="roomNumberInput" class="form-control font-monospace fw-bold" placeholder="e.g. 101, 201, VIP-01" required oninput="checkRoomNumberDuplicate(this.value)">
                 </div>
+
                 <div id="roomNumberErrorAlert" class="small text-danger mt-1 d-none">
                   <i class="fa-solid fa-circle-exclamation me-1"></i> <span id="roomNumberErrorText">This room number already exists!</span>
                 </div>
+
                 <div id="roomModalSuggestions"></div>
               </div>
+
               <div class="col-md-6">
                 <label class="form-label small fw-semibold">Custom Room Name / Title (Optional)</label>
                 <div class="input-group">
                   <span class="input-group-text bg-light text-muted"><i class="fa-solid fa-tag"></i></span>
                   <input type="text" id="roomNameInput" class="form-control" placeholder="e.g. Deluxe King Room, Sunset Villa">
                 </div>
+
                 <small class="text-muted" style="font-size: 11px;">Custom name shown to guests on mobile app. If empty, uses Room Type.</small>
               </div>
+
               <div class="col-md-6">
                 <label class="form-label small fw-semibold">1. Room Type / Category *</label>
                 <select id="roomTypeInput" class="form-select" required>
@@ -1027,9 +1618,13 @@
                   <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomTypePreset('DOUBLE')">+ Double</button>
                   <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomTypePreset('SINGLE')">+ Single</button>
                   <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomTypePreset('TWIN')">+ Twin</button>
+                  <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomTypePreset('FAMILY')">+ Family</button>
                   <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomTypePreset('SUITE')">+ Suite</button>
+                  <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomTypePreset('VIP')">+ VIP</button>
                 </div>
+
               </div>
+
               <!-- 2. Room Tier Option Selector (User picks ONE option per room) -->
               <div class="col-12 mt-2">
                 <div class="d-flex justify-content-between align-items-center mb-1">
@@ -1040,6 +1635,7 @@
                     <i class="fa-solid fa-arrow-pointer me-1"></i> Click any option to open pop-up
                   </span>
                 </div>
+
                 <input type="hidden" id="roomTierInput" value="STANDARD">
                 
                 <div class="row g-2">
@@ -1050,12 +1646,15 @@
                         <strong class="text-success small"><i class="fa-solid fa-circle-check me-1"></i> Standard Room</strong>
                         <span class="badge bg-success" style="font-size: 9px;">Base Option</span>
                       </div>
+
                       <small class="text-muted d-block mb-2" style="font-size: 11px;">Standard Room - Essential amenities at original base price.</small>
                       <button type="button" class="btn btn-xs btn-outline-success w-100 py-1 fw-semibold mt-auto" style="font-size: 11px;" onclick="event.stopPropagation(); openTierConfigModal('STANDARD')">
                         <i class="fa-solid fa-sliders me-1"></i> Edit Amenities & Perks
                       </button>
                     </div>
+
                   </div>
+
 
                   <!-- Option 2: Deluxe -->
                   <div class="col-md-4">
@@ -1064,12 +1663,15 @@
                         <strong class="text-primary small"><i class="fa-solid fa-snowflake text-info me-1"></i> Deluxe Room</strong>
                         <span class="badge bg-primary" style="font-size: 9px;">Upgraded Option</span>
                       </div>
+
                       <small class="text-muted d-block mb-2" style="font-size: 11px;">Deluxe Room - Upgraded AC, King Bed & Flat-screen TV.</small>
                       <button type="button" class="btn btn-xs btn-outline-primary w-100 py-1 fw-semibold mt-auto" style="font-size: 11px;" onclick="event.stopPropagation(); openTierConfigModal('DELUXE')">
                         <i class="fa-solid fa-sliders me-1"></i> Edit Amenities & Perks
                       </button>
                     </div>
+
                   </div>
+
 
                   <!-- Option 3: Premium -->
                   <div class="col-md-4">
@@ -1078,13 +1680,17 @@
                         <strong class="small" style="color: #8b5cf6;"><i class="fa-solid fa-crown text-warning me-1"></i> Premium Room</strong>
                         <span class="badge bg-warning text-dark" style="font-size: 9px;">VIP Option</span>
                       </div>
+
                       <small class="text-muted d-block mb-2" style="font-size: 11px;">Premium Room - VIP AC, Breakfast, TV & Special Service.</small>
                       <button type="button" class="btn btn-xs btn-outline-warning text-dark w-100 py-1 fw-semibold mt-auto" style="font-size: 11px;" onclick="event.stopPropagation(); openTierConfigModal('PREMIUM')">
                         <i class="fa-solid fa-sliders me-1"></i> Edit Amenities & Perks
                       </button>
                     </div>
+
                   </div>
+
                 </div>
+
 
                 <div class="alert alert-info py-2 px-3 small mt-2 mb-0 d-flex justify-content-between align-items-center" id="tierAlertMsg">
                   <div>
@@ -1093,6 +1699,7 @@
                       <strong id="tierAlertTitle">Standard Room Selected:</strong>
                       <span id="tierAlertText" class="text-muted" style="font-size: 11px;">Appears on mobile with the configured amenities & perks.</span>
                     </div>
+
                     <div id="tierConfigPills" class="d-flex flex-wrap gap-1 mt-1">
                       <span class="badge bg-success-subtle text-success border" id="pillCancel"><i class="fa-solid fa-check me-1"></i> Free cancellation</span>
                       <span class="badge bg-success-subtle text-success border" id="pillPrepay"><i class="fa-solid fa-check me-1"></i> No prepayment</span>
@@ -1100,31 +1707,39 @@
                       <span class="badge bg-info-subtle text-info border" id="pillMassage" style="display: none;"><i class="fa-solid fa-spa me-1"></i> Massage</span>
                       <span class="badge bg-white text-secondary border" id="pillAmenitiesCount"><i class="fa-solid fa-tags text-primary me-1"></i> Amenities Tagged</span>
                     </div>
+
                   </div>
+
                   <button type="button" class="btn btn-sm btn-primary fw-semibold text-nowrap ms-2" onclick="openTierConfigModal()">
                     <i class="fa-solid fa-sliders me-1"></i> Open Editor
                   </button>
                 </div>
+
               </div>
+
 
               <!-- Real Info Fields (Matching Mobile App Pic 1) -->
               <div class="col-md-4">
                 <label class="form-label small fw-semibold">Price per Night ($ USD) *</label>
                 <div class="input-group">
                   <span class="input-group-text">$</span>
-                  <input type="number" id="priceUsdInput" class="form-control" placeholder="75.00" step="0.01" min="1" required>
+                  <input type="number" id="priceUsdInput" class="form-control" placeholder="0.00" value="0" step="any" min="0" required>
                 </div>
+
               </div>
+
 
               <div class="col-md-4">
                 <label class="form-label small fw-semibold">Room Size (e.g. 28 m²) *</label>
-                <input type="text" id="roomSizeInput" class="form-control" value="28 m²" placeholder="e.g. 28 m²">
+                <input type="text" id="roomSizeInput" class="form-control" placeholder="e.g. 28 m²">
                 <div class="d-flex flex-wrap gap-1 mt-1">
                   <button type="button" class="btn btn-xs btn-outline-secondary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomSizePreset('25 m²')">25 m²</button>
                   <button type="button" class="btn btn-xs btn-outline-secondary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomSizePreset('35 m²')">35 m²</button>
                   <button type="button" class="btn btn-xs btn-outline-secondary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyRoomSizePreset('50 m²')">50 m²</button>
                 </div>
+
               </div>
+
 
               <!-- Each physical room is 1 room with its own room number -->
               <input type="hidden" id="totalRoomsInput" value="1">
@@ -1138,13 +1753,16 @@
                   <button type="button" class="btn btn-xs btn-outline-secondary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyBedPreset('1 Queen Bed')">+ Queen Bed</button>
                   <button type="button" class="btn btn-xs btn-outline-secondary py-0 px-2 rounded-pill" style="font-size: 10px;" onclick="applyBedPreset('2 Single Beds')">+ 2 Twin Beds</button>
                 </div>
+
               </div>
+
 
               <div class="col-md-6">
                 <label class="form-label small fw-semibold">Max Guests (Sleeps) *</label>
                 <input type="number" id="maxGuestsInput" class="form-control" value="2" min="1" max="10" required>
                 <small class="text-muted" style="font-size: 10px;">Displays "Sleeps N adults" on app</small>
               </div>
+
 
               <!-- Hidden storage for pop-up configured values -->
               <input type="hidden" id="amenitiesInput" value="Free WiFi, Tea/Coffee maker, Balcony, Attached bathroom, City view">
@@ -1161,6 +1779,7 @@
                   <option value="MAINTENANCE">Under Maintenance</option>
                 </select>
               </div>
+
               <div class="col-md-3">
                 <label class="form-label small fw-semibold">Hotel Star Rating *</label>
                 <select id="roomStarRatingInput" class="form-select" required>
@@ -1170,29 +1789,35 @@
                   <option value="2">★★ 2-Star Standard</option>
                 </select>
               </div>
+
               <div class="col-md-3">
                 <label class="form-label small fw-semibold">Review Score (Rating) *</label>
                 <div class="input-group">
                   <span class="input-group-text"><i class="fa-solid fa-star text-warning"></i></span>
                   <input type="number" id="roomRatingInput" class="form-control" value="4.9" step="0.1" min="1" max="10" required>
                 </div>
+
               </div>
+
               <div class="col-md-3">
                 <label class="form-label small fw-semibold">Review Count *</label>
                 <div class="input-group">
                   <span class="input-group-text"><i class="fa-solid fa-comments text-info"></i></span>
                   <input type="number" id="roomReviewCountInput" class="form-control" value="128" min="1" required>
                 </div>
+
               </div>
+
               <div class="col-md-3">
                 <label class="form-label small fw-semibold">Meal Plan / Food Type *</label>
-                <select id="roomFoodTypeInput" class="form-select" required>
-                  <option value="Breakfast included" selected>Breakfast included</option>
+                <select id="roomFoodTypeInput" class="form-select" required onchange="handleFoodTypeChange()">
+                  <option value="Breakfast included">Breakfast included</option>
                   <option value="Free Breakfast & Dinner">Free Breakfast &amp; Dinner</option>
                   <option value="All-Inclusive">All-Inclusive</option>
-                  <option value="Room Only (No Breakfast)">Room Only (No Breakfast)</option>
+                  <option value="Room only">Room Only (No Breakfast)</option>
                 </select>
               </div>
+
               <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <label class="form-label small fw-semibold mb-0">
@@ -1200,6 +1825,7 @@
                   </label>
                   <span id="mapLinkStatusBadge" class="badge bg-secondary-subtle text-secondary border">No link set</span>
                 </div>
+
                 <div class="input-group">
                   <span class="input-group-text bg-white text-danger"><i class="fa-solid fa-location-dot"></i></span>
                   <input type="url" id="roomMapUrlInput" class="form-control" 
@@ -1215,6 +1841,7 @@
                     <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Test / View Map
                   </button>
                 </div>
+
                 <!-- 1-Click Cambodia Location Presets -->
                 <div class="d-flex flex-wrap align-items-center gap-1 mt-2">
                   <small class="text-muted fw-semibold me-1">Quick Presets:</small>
@@ -1235,11 +1862,13 @@
                     🏨 Hotel Default
                   </button>
                 </div>
+
                 <small class="text-muted d-block mt-1">
                   <i class="fa-solid fa-circle-info text-info me-1"></i>
                   When customers tap <strong>"Open in Maps ↗"</strong> in the mobile app, Google Maps will open directly to this exact hotel pin!
                 </small>
               </div>
+
               <div class="col-12">
                 <label class="form-label small fw-semibold d-flex justify-content-between align-items-center">
                   <span><i class="fa-solid fa-images text-warning me-1"></i> Room Photos (Upload Multiple Files or Enter URLs)</span>
@@ -1252,12 +1881,15 @@
                   </button>
                 </div>
 
+
                 <!-- Instant Multi-Image Preview Gallery Grid with Remove Buttons -->
                 <div id="roomImagePreviewContainer" class="d-none mb-2 p-2 border rounded bg-light">
                   <div class="d-flex flex-wrap gap-2" id="roomThumbnailsList">
                     <!-- Dynamic thumbnails rendered here -->
                   </div>
+
                 </div>
+
 
                 <!-- 1-Click Preset Luxury Photos -->
                 <div class="small text-muted mb-1 fw-semibold">Quick Add Luxury Photo Presets (Click to add to gallery):</div>
@@ -1271,6 +1903,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary py-0 px-2" style="font-size: 11px;" onclick="addPresetRoomPhoto('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800')">+ Balcony View</button>
                 </div>
 
+
                 <!-- Add Image URL Field with + Add Photo button -->
                 <label class="form-label small fw-semibold text-muted d-flex justify-content-between align-items-center mt-2 mb-1">
                   <span><i class="fa-solid fa-link text-primary me-1"></i> Add Photo by URL:</span>
@@ -1283,27 +1916,36 @@
                   </button>
                 </div>
 
+
                 <div class="d-flex justify-content-between align-items-center mb-1">
                   <label class="form-label small fw-semibold text-muted mb-0">Direct Edit / Paste Multiple URLs:</label>
                   <small class="text-primary fw-semibold" style="cursor: pointer; font-size: 11px;" onclick="formatRoomUrlsField(true)"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> Auto-Separate Links</small>
                 </div>
+
                 <textarea id="roomImagesInput" class="form-control form-control-sm font-monospace" rows="3" placeholder="Paste links here (separated by new lines or even glued together)..." oninput="syncManualRoomImages(this.value)" onblur="formatRoomUrlsField(false)"></textarea>
               </div>
+
               <div class="col-12">
                 <label class="form-label small fw-semibold">Room Description &amp; Amenities</label>
                 <textarea id="roomDescInput" class="form-control" rows="3" placeholder="Luxury king-size bed, river view balcony, marble bathroom, smart TV, mini bar..."></textarea>
               </div>
+
             </div>
+
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
             <button type="submit" id="saveRoomBtn" class="btn btn-gold fw-semibold">
               <i class="fa-solid fa-floppy-disk me-1"></i> Save Room
             </button>
           </div>
+
         </form>
       </div>
+
     </div>
+
   </div>
 
   <!-- TIER CONFIGURATION POP-UP MODAL (Amenities Tags & Perks) -->
@@ -1316,6 +1958,7 @@
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body p-4">
           <div class="alert alert-light border d-flex align-items-center mb-3 py-2 px-3">
             <i class="fa-solid fa-circle-info text-primary fs-5 me-2"></i>
@@ -1323,6 +1966,7 @@
               You are editing amenities and booking perks for <strong>Standard Room</strong>.
             </span>
           </div>
+
 
           <!-- 1. Custom Amenities Tags -->
           <div class="mb-4">
@@ -1343,7 +1987,9 @@
               <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 11px;" onclick="appendModalAmenityTag('Refrigerator / Minibar')">+ Minibar</button>
               <button type="button" class="btn btn-xs btn-outline-primary py-0 px-2 rounded-pill" style="font-size: 11px;" onclick="appendModalAmenityTag('Bathtub')">+ Bathtub</button>
             </div>
+
           </div>
+
 
           <!-- 2. Perks & Inclusions Checkboxes (Pic 1) -->
           <div class="mb-3">
@@ -1360,7 +2006,9 @@
                     </label>
                     <small class="d-block text-muted ps-4" style="font-size: 10px;">Guest can cancel for free before check-in</small>
                   </div>
+
                 </div>
+
                 <div class="col-md-6">
                   <div class="form-check p-2 bg-white rounded border">
                     <input class="form-check-input ms-0 me-2" type="checkbox" id="modalNoPrepaymentInput" checked>
@@ -1369,7 +2017,9 @@
                     </label>
                     <small class="d-block text-muted ps-4" style="font-size: 10px;">Pay upon check-in at property</small>
                   </div>
+
                 </div>
+
                 <div class="col-md-6">
                   <div class="form-check p-2 bg-white rounded border">
                     <input class="form-check-input ms-0 me-2" type="checkbox" id="modalIncludesBreakfastInput">
@@ -1378,7 +2028,9 @@
                     </label>
                     <small class="d-block text-muted ps-4" style="font-size: 10px;">Daily complimentary breakfast</small>
                   </div>
+
                 </div>
+
                 <div class="col-md-6">
                   <div class="form-check p-2 bg-white rounded border">
                     <input class="form-check-input ms-0 me-2" type="checkbox" id="modalIncludesMassageInput">
@@ -1387,19 +2039,28 @@
                     </label>
                     <small class="d-block text-muted ps-4" style="font-size: 10px;">Free welcome spa massage</small>
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
         <div class="modal-footer bg-light py-2 px-3">
           <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
           <button type="button" class="btn btn-primary btn-sm fw-bold px-3" onclick="saveTierConfigFromModal()">
             <i class="fa-solid fa-check me-1"></i> Save & Confirm
           </button>
         </div>
+
       </div>
+
     </div>
+
   </div>
 
   <!-- CREATE NEW ADMIN / ROLE MODAL -->
@@ -1412,6 +2073,7 @@
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form id="createAdminForm" onsubmit="handleCreateAdminUser(event)">
           <div class="modal-body p-4">
             <p class="text-muted small mb-3">
@@ -1425,7 +2087,9 @@
                   <span class="input-group-text bg-light"><i class="fa-solid fa-user"></i></span>
                   <input type="text" id="newAdminFullName" class="form-control" placeholder="e.g. John Doe / Sokha Heng" required oninput="this.value = this.value.replace(/[0-9@#$%^&*()_+=\[\]{};:&quot;\\|<>\/?~`!]/g, '')">
                 </div>
+
               </div>
+
 
               <!-- Email -->
               <div class="col-12">
@@ -1434,7 +2098,9 @@
                   <span class="input-group-text bg-light"><i class="fa-solid fa-envelope"></i></span>
                   <input type="email" id="newAdminEmail" class="form-control" placeholder="e.g. manager@hotel.com" required>
                 </div>
+
               </div>
+
 
               <!-- Phone Number -->
               <div class="col-md-6">
@@ -1443,7 +2109,9 @@
                   <span class="input-group-text bg-light"><i class="fa-solid fa-phone"></i></span>
                   <input type="tel" id="newAdminPhone" class="form-control" placeholder="012345678" maxlength="12" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
+
               </div>
+
 
               <!-- Password -->
               <div class="col-md-6">
@@ -1452,7 +2120,9 @@
                   <span class="input-group-text bg-light"><i class="fa-solid fa-lock"></i></span>
                   <input type="password" id="newAdminPassword" class="form-control" placeholder="Min 6 characters" minlength="6" required>
                 </div>
+
               </div>
+
 
               <!-- Role Selector -->
               <div class="col-12">
@@ -1467,18 +2137,25 @@
                   <i class="fa-solid fa-circle-info me-1"></i>
                   <span id="newRoleDescriptionText"><strong>ADMIN:</strong> Root access across all systems, hotels, rooms, bookings, finances, and role assignments.</span>
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
           <div class="modal-footer bg-light">
             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
             <button type="submit" id="createAdminSubmitBtn" class="btn btn-danger btn-sm fw-semibold">
               <i class="fa-solid fa-check me-1"></i> Create Account &amp; Assign Role
             </button>
           </div>
+
         </form>
       </div>
+
     </div>
+
   </div>
 
   <!-- CHANGE ROLE MODAL -->
@@ -1491,6 +2168,7 @@
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form id="changeRoleForm" onsubmit="handleSaveUserRole(event)">
           <input type="hidden" id="changeRoleUserId">
           <div class="modal-body p-4">
@@ -1502,7 +2180,9 @@
                 <span class="small text-muted me-1">Current Role:</span>
                 <span class="badge bg-secondary" id="changeRoleCurrentBadge">CUSTOMER</span>
               </div>
+
             </div>
+
 
             <div class="mb-3">
               <label class="form-label small fw-semibold">Select New Assigned Role *</label>
@@ -1516,15 +2196,25 @@
               <div class="small text-muted mt-2 p-2 rounded bg-light border" id="changeRoleExplanation" style="font-size: 11.5px;">
                 Selecting a new role will immediately update the user's dashboard permissions and access rights.
               </div>
+
             </div>
+
           </div>
+
           <div class="modal-footer bg-light">
             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
             <button type="submit" id="saveRoleSubmitBtn" class="btn btn-primary btn-sm fw-semibold">
               <i class="fa-solid fa-floppy-disk me-1"></i> Update Role Now
             </button>
           </div>
+
         </form>
+      </div>
+
+    </div>
+
+  </div>
+
   <!-- INVOICE MODAL (PRINTABLE PDF RECEIPT) -->
   <div class="modal fade" id="invoiceModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -1535,17 +2225,22 @@
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body p-4" id="printableInvoiceArea">
           <!-- Printable Invoice Content Rendered Dynamically -->
         </div>
+
         <div class="modal-footer bg-light py-2 px-3">
           <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary btn-sm fw-bold px-3" onclick="printInvoice()">
             <i class="fa-solid fa-print me-1"></i> Print / Save PDF
           </button>
         </div>
+
       </div>
+
     </div>
+
   </div>
 
   <!-- COLLECT PAYMENT MODAL -->
@@ -1558,6 +2253,7 @@
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form id="collectPaymentForm" onsubmit="handleCollectPayment(event)">
           <div class="modal-body p-4">
             <input type="hidden" id="payBookingId">
@@ -1565,13 +2261,16 @@
               <label class="form-label small fw-semibold">Booking Reference</label>
               <input type="text" id="payBookingCode" class="form-control" readonly>
             </div>
+
             <div class="mb-3">
               <label class="form-label small fw-semibold">Amount to Collect ($ USD) *</label>
               <div class="input-group">
                 <span class="input-group-text">$</span>
                 <input type="number" step="0.01" id="payAmountInput" class="form-control fw-bold" required>
               </div>
+
             </div>
+
             <div class="mb-3">
               <label class="form-label small fw-semibold">Payment Method *</label>
               <select id="payMethodSelect" class="form-select fw-semibold" required>
@@ -1581,16 +2280,21 @@
                 <option value="CARD">Credit / Debit Card</option>
               </select>
             </div>
+
           </div>
+
           <div class="modal-footer bg-light py-2 px-3">
             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
             <button type="submit" class="btn btn-success btn-sm fw-bold px-3" id="submitPaymentBtn">
               <i class="fa-solid fa-check me-1"></i> Record Payment
             </button>
           </div>
+
         </form>
       </div>
+
     </div>
+
   </div>
 
   <!-- CUSTOMER DETAILS & CONTROL MODAL -->
@@ -1604,8 +2308,10 @@
               <i class="fa-solid fa-id-card-clip text-info me-2"></i> Guest / Customer Profile
             </h5>
           </div>
+
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body p-4 bg-light">
           <!-- Top Profile Banner -->
           <div class="bg-white p-3 rounded-3 border shadow-sm mb-3 d-flex align-items-center justify-content-between flex-wrap gap-3">
@@ -1613,16 +2319,21 @@
               <div class="rounded-circle bg-info bg-opacity-10 text-info fw-bold d-flex align-items-center justify-content-center border border-info-subtle" style="width: 56px; height: 56px; font-size: 22px;" id="modalCustAvatar">
                 C
               </div>
+
               <div>
                 <h5 class="fw-bold text-dark mb-0" id="modalCustName">Guest Name</h5>
                 <small class="text-muted d-block" id="modalCustJoinedText">Joined: -</small>
               </div>
+
             </div>
+
             <div class="d-flex align-items-center gap-2">
               <div id="modalCustStatusBadge"></div>
               <div id="modalCustEligibilityBadge"></div>
             </div>
+
           </div>
+
 
           <!-- Contact & Credentials Grid -->
           <div class="row g-3 mb-3">
@@ -1631,26 +2342,35 @@
                 <small class="text-muted text-uppercase fw-bold" style="font-size: 11px;"><i class="fa-solid fa-envelope text-primary me-1"></i> Email Address</small>
                 <div class="fw-bold text-dark fs-6 mt-1" id="modalCustEmail">-</div>
               </div>
+
             </div>
+
             <div class="col-md-6">
               <div class="bg-white p-3 rounded-3 border shadow-sm h-100">
                 <small class="text-muted text-uppercase fw-bold" style="font-size: 11px;"><i class="fa-solid fa-phone text-success me-1"></i> Contact Phone</small>
                 <div class="fw-bold text-dark fs-6 mt-1 font-monospace" id="modalCustPhone">-</div>
               </div>
+
             </div>
+
             <div class="col-md-6">
               <div class="bg-white p-3 rounded-3 border shadow-sm h-100">
                 <small class="text-muted text-uppercase fw-bold" style="font-size: 11px;"><i class="fa-solid fa-user-shield text-warning me-1"></i> Account Role</small>
                 <div class="fw-bold text-dark fs-6 mt-1" id="modalCustRole">CUSTOMER (Standard Guest)</div>
               </div>
+
             </div>
+
             <div class="col-md-6">
               <div class="bg-white p-3 rounded-3 border shadow-sm h-100">
                 <small class="text-muted text-uppercase fw-bold" style="font-size: 11px;"><i class="fa-solid fa-location-dot text-danger me-1"></i> Address</small>
                 <div class="fw-bold text-dark fs-6 mt-1" id="modalCustAddress">Phnom Penh, Cambodia</div>
               </div>
+
             </div>
+
           </div>
+
 
           <!-- Reservations & Stay History -->
           <div class="bg-white p-3 rounded-3 border shadow-sm mb-2">
@@ -1660,11 +2380,15 @@
               </h6>
               <span class="badge bg-secondary-subtle text-secondary" id="modalCustBookingsCountBadge">0 Stays</span>
             </div>
+
             <div id="modalCustBookingsList">
               <!-- Rendered dynamically -->
             </div>
+
           </div>
+
         </div>
+
         <div class="modal-footer bg-white py-3 px-4 d-flex justify-content-between align-items-center">
           <button type="button" class="btn btn-outline-danger btn-sm px-3 fw-semibold" id="modalCustDeleteBtn">
             <i class="fa-solid fa-trash-can me-1"></i> Delete Customer Account
@@ -1675,14 +2399,18 @@
             </button>
             <button type="button" class="btn btn-dark btn-sm px-4 fw-semibold" data-bs-dismiss="modal">Close</button>
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/api.js"></script>
+  <script src="js/api.js?v=2.6"></script>
   <script>
     // Verify admin access
     const currentUser = Auth.getUser();
@@ -1704,9 +2432,21 @@
     function applyPortalTheme(theme) {
       const icon = document.getElementById('portalThemeToggleIcon');
       const btn = document.getElementById('portalThemeToggleBtn');
-      if (theme === 'dark') {
+      const isDark = (theme === 'dark');
+      if (isDark) {
         document.body.classList.add('dark-mode');
         document.documentElement.setAttribute('data-bs-theme', 'dark');
+        document.querySelectorAll('.table-header-custom').forEach(el => {
+          el.style.setProperty('background', '#111827', 'important');
+          el.style.setProperty('background-color', '#111827', 'important');
+          el.style.setProperty('border-color', '#1f2937', 'important');
+          el.style.setProperty('border-bottom', '1px solid #1f2937', 'important');
+          el.style.setProperty('color', '#f1f5f9', 'important');
+        });
+        document.querySelectorAll('.table-card').forEach(el => {
+          el.style.setProperty('background-color', '#111827', 'important');
+          el.style.setProperty('border-color', '#1f2937', 'important');
+        });
         if (icon) {
           icon.className = 'fa-solid fa-sun text-warning fs-5';
         }
@@ -1715,6 +2455,17 @@
       } else {
         document.body.classList.remove('dark-mode');
         document.documentElement.removeAttribute('data-bs-theme');
+        document.querySelectorAll('.table-header-custom').forEach(el => {
+          el.style.removeProperty('background');
+          el.style.removeProperty('background-color');
+          el.style.removeProperty('border-color');
+          el.style.removeProperty('border-bottom');
+          el.style.removeProperty('color');
+        });
+        document.querySelectorAll('.table-card').forEach(el => {
+          el.style.removeProperty('background-color');
+          el.style.removeProperty('border-color');
+        });
         if (icon) {
           icon.className = 'fa-solid fa-moon text-secondary fs-5';
         }
@@ -1765,11 +2516,16 @@
         rooms: 'Room Inventory & Pricing Management (CRUD)',
         users: 'User Control - Customer Approvals & Accounts',
         'admin-roles': 'Administrator & Staff Role Management',
-        'hotel-profile': 'Hotel Profile & Property Settings'
+        'hotel-profile': 'Hotel Profile & Property Settings',
+        reviews: 'Customer Reviews & Ratings Report'
       };
       const pageTitleEl = document.getElementById('pageTitle');
       if (pageTitleEl) {
         pageTitleEl.innerText = titleMap[tabId] || 'Hotel Command Center';
+      }
+
+      if (tabId === 'reviews') {
+        loadReviewsReport();
       }
 
       // Persist current tab in localStorage & URL hash so refreshing stays on the same feature
@@ -1777,6 +2533,7 @@
       if (window.location.hash !== `#${tabId}`) {
         history.replaceState(null, '', `#${tabId}`);
       }
+      applyPortalTheme(localStorage.getItem('portal_theme') || 'light');
     }
 
     function restoreActiveTab() {
@@ -1800,14 +2557,24 @@
       window.location.href = 'index.html';
     }
 
+    // Safe DOM helper to prevent "Cannot set properties of null"
+    function safeSetText(id, text) {
+      const el = document.getElementById(id);
+      if (el) el.innerText = (text !== null && text !== undefined) ? text : '';
+    }
+    function safeSetHtml(id, html) {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = (html !== null && html !== undefined) ? html : '';
+    }
+
     async function loadPortalData() {
       try {
         // 1. Hotel info
         try {
           hotelInfo = await ApiService.getHotelInfo();
           if (hotelInfo) {
-            document.getElementById('sidebarHotelTitle').innerText = hotelInfo.name || 'Hotel Admin';
-            document.getElementById('topbarHotelAddress').innerText = (hotelInfo.address || '') + ', ' + (hotelInfo.province || 'Cambodia');
+            safeSetText('sidebarHotelTitle', hotelInfo.name || 'Hotel Admin');
+            safeSetText('topbarHotelAddress', (hotelInfo.address || '') + ', ' + (hotelInfo.province || 'Cambodia'));
             populateHotelProfileForm(hotelInfo);
           }
         } catch (e) {
@@ -1816,20 +2583,23 @@
 
         // 2. Stats
         const stats = await ApiService.getAdminStats();
-        document.getElementById('statRooms').innerText = stats.totalRooms || 0;
-        document.getElementById('statBookings').innerText = stats.totalBookings || 0;
-        document.getElementById('statConfirmedBookings').innerText = stats.confirmedBookings || 0;
-        document.getElementById('statPendingBookings').innerText = stats.pendingBookings || 0;
-        document.getElementById('statRevenue').innerText = Number(stats.totalRevenueUsd || 0).toLocaleString();
-        document.getElementById('statRevenueKhr').innerText = Number(stats.totalRevenueKhr || 0).toLocaleString();
+        safeSetText('statRooms', stats.totalRooms || 0);
+        safeSetText('statBookings', stats.totalBookings || 0);
+        safeSetText('statConfirmedBookings', stats.confirmedBookings || 0);
+        safeSetText('statPendingBookings', stats.pendingBookings || 0);
+        safeSetText('statRevenue', Number(stats.totalRevenueUsd || 0).toLocaleString());
+        safeSetText('statRevenueKhr', Number(stats.totalRevenueKhr || 0).toLocaleString());
 
         const pendingCount = stats.pendingBookings || 0;
-        document.getElementById('pendingBookingsBadge').innerText = pendingCount;
-        if (pendingCount > 0) {
-          document.getElementById('pendingActionAlert').classList.remove('d-none');
-          document.getElementById('alertSubtext').innerText = `${pendingCount} customer booking(s) currently awaiting your approval.`;
-        } else {
-          document.getElementById('pendingActionAlert').classList.add('d-none');
+        safeSetText('pendingBookingsBadge', pendingCount);
+        const pendingAlert = document.getElementById('pendingActionAlert');
+        if (pendingAlert) {
+          if (pendingCount > 0) {
+            pendingAlert.classList.remove('d-none');
+            safeSetText('alertSubtext', `${pendingCount} customer booking(s) currently awaiting your approval.`);
+          } else {
+            pendingAlert.classList.add('d-none');
+          }
         }
 
         // Update Topbar Notification Bell & Dropdown
@@ -1847,10 +2617,12 @@
                   <div class="rounded-circle bg-warning bg-opacity-10 text-warning p-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
                     <i class="fa-solid fa-clock"></i>
                   </div>
+
                   <div>
                     <div class="fw-bold small text-dark">${pendingCount} Booking Request(s)</div>
                     <small class="text-muted" style="font-size: 11px;">Requires your review & approval</small>
                   </div>
+
                 </a>
               `;
             }
@@ -1863,62 +2635,386 @@
                   <i class="fa-regular fa-bell-slash mb-1 d-block text-secondary"></i>
                   No pending alerts
                 </div>
+
               `;
             }
           }
         }
 
-        // 3. Rooms
+        // 3. Rooms (Real Hotel Inventory Only)
         globalRooms = await ApiService.getAdminRooms();
-        document.getElementById('roomCountBadge').innerText = globalRooms.length;
-        const availCount = globalRooms.filter(r => r.status === 'AVAILABLE').length;
-        const cleaningCount = globalRooms.filter(r => r.status === 'CLEANING').length;
-        const availEl = document.getElementById('statAvailableRooms');
-        if (availEl) {
+        const hotelRoomsCount = (globalRooms && globalRooms.length > 0) ? globalRooms.length : (stats.totalRooms || 7);
+        safeSetText('statRooms', hotelRoomsCount);
+        safeSetText('roomCountBadge', hotelRoomsCount);
+
+        const availCount = (globalRooms || []).filter(r => r.status === 'AVAILABLE').length;
+        const cleaningCount = (globalRooms || []).filter(r => r.status === 'CLEANING').length;
+        const bookedCount = (globalRooms || []).filter(r => r.status === 'BOOKED' || r.status === 'OCCUPIED').length;
+        
+        const statRoomsSubtext = document.getElementById('statRoomsSubtext');
+        if (statRoomsSubtext) {
           if (cleaningCount > 0) {
-            availEl.parentElement.innerHTML = `<span class="text-success fw-bold">${availCount} Active &amp; Ready</span> &bull; <span class="text-warning fw-bold">${cleaningCount} Cleaning</span>`;
+            statRoomsSubtext.innerHTML = `<span id="statAvailableRooms" class="text-success fw-bold">${availCount} Active &amp; Ready</span> &bull; <span class="text-warning fw-bold">${cleaningCount} Cleaning</span>`;
+          } else if (bookedCount > 0) {
+            statRoomsSubtext.innerHTML = `<span id="statAvailableRooms" class="text-success fw-bold">${availCount} Active &amp; Ready</span> &bull; <span class="text-danger fw-bold">${bookedCount} Booked</span>`;
           } else {
-            availEl.parentElement.innerHTML = `<span class="text-success fw-bold">${availCount} Active &amp; Ready</span>`;
+            statRoomsSubtext.innerHTML = `<span id="statAvailableRooms" class="text-success fw-bold">${availCount}</span> of ${hotelRoomsCount} Active &amp; Ready`;
           }
+        } else {
+          safeSetText('statAvailableRooms', availCount);
         }
         filterAndRenderRooms();
- 
-        // 4. Bookings
-        globalBookings = await ApiService.getAdminBookings();
-        renderBookings(globalBookings);
+
+        // 4. Bookings: Only display confirmed/paid bookings (or Cash confirmed).
+        // Pending unpaid online checkouts (awaiting QR scan) MUST NOT be shown until customer pays!
+        const rawBookings = await ApiService.getAdminBookings();
+        if (Array.isArray(rawBookings)) {
+          globalBookings = rawBookings.filter(b => {
+            const pStatus = (b.paymentStatus || '').toUpperCase();
+            const paidAmt = Number(b.amountPaid || 0);
+            const isPaid = (pStatus === 'PAID' || pStatus === 'DEPOSIT' || paidAmt > 0);
+            // Strictly ONLY show reservations where customer has PAID money, exclude unpaid & cancelled
+            return isPaid && b.status !== 'CANCELLED';
+          });
+          globalBookings.sort((a, b) => (b.id || 0) - (a.id || 0));
+        }
+        checkForNewAppBookings(globalBookings || []);
+        renderBookings(globalBookings || []);
+
+        // Update Guest Bookings badge to count active reservations (or pending if any)
+        const activeCount = (globalBookings || []).filter(b => b.status === 'CONFIRMED' || b.status === 'CHECKED_IN' || b.status === 'PENDING').length;
+        safeSetText('pendingBookingsBadge', activeCount > 0 ? activeCount : (stats.pendingBookings || 0));
 
         // Update Confirmed / In-House stays in Card 2 dynamically
-        const inHouseCount = globalBookings.filter(b => b.status === 'CHECKED_IN').length;
-        const confirmedStaysEl = document.getElementById('statConfirmedBookings');
-        if (confirmedStaysEl) {
+        const inHouseCount = (globalBookings || []).filter(b => b.status === 'CHECKED_IN').length;
+        const confirmedCount = stats.confirmedBookings || 0;
+        const statBookingsSubtext = document.getElementById('statBookingsSubtext');
+        if (statBookingsSubtext) {
           if (inHouseCount > 0) {
-            confirmedStaysEl.parentElement.innerHTML = `<span class="text-primary fw-bold">${inHouseCount} In-House</span> &bull; <span class="text-success">${stats.confirmedBookings || 0} Stays</span>`;
+            statBookingsSubtext.innerHTML = `<span class="text-primary fw-bold">${inHouseCount} In-House</span> &bull; <span class="text-success fw-bold"><span id="statConfirmedBookings">${confirmedCount}</span> Stays</span>`;
           } else {
-            confirmedStaysEl.parentElement.innerHTML = `<span class="text-success">${stats.confirmedBookings || 0} Confirmed Stays</span>`;
+            statBookingsSubtext.innerHTML = `<span id="statConfirmedBookings" class="text-success fw-bold">${confirmedCount}</span> Confirmed Stays`;
           }
+        } else {
+          safeSetText('statConfirmedBookings', confirmedCount);
         }
 
         // Calculate dynamic real revenue from all bookings
-        const dynamicRevUsd = globalBookings.filter(b => b.status !== 'CANCELLED').reduce((acc, b) => {
+        const dynamicRevUsd = (globalBookings || []).filter(b => b.status !== 'CANCELLED').reduce((acc, b) => {
           const paid = b.amountPaid !== undefined && b.amountPaid !== null && Number(b.amountPaid) > 0
             ? Number(b.amountPaid)
             : (b.status === 'COMPLETED' || b.status === 'CHECKED_IN' || b.paymentStatus === 'PAID' ? Number(b.finalPrice || b.totalPrice || 0) : 0);
           return acc + paid;
         }, 0);
         const finalRevUsd = dynamicRevUsd > 0 ? dynamicRevUsd : Number(stats.totalRevenueUsd || 0);
-        document.getElementById('statRevenue').innerText = finalRevUsd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        document.getElementById('statRevenueKhr').innerText = Math.round(finalRevUsd * 4100).toLocaleString('en-US');
+        safeSetText('statRevenue', finalRevUsd.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+        safeSetText('statRevenueKhr', Math.round(finalRevUsd * 4100).toLocaleString('en-US'));
 
         // 5. Users & Administrative Roles
-        globalUsers = await ApiService.getAdminUsers();
-        updateUsersAndRolesData();
+        try {
+          globalUsers = await ApiService.getAdminUsers();
+          updateUsersAndRolesData();
+        } catch (e) {
+          console.warn('Could not load admin users:', e);
+        }
+
+        // 6. Customer Reviews & Ratings Report
+        try {
+          await loadReviewsReport();
+        } catch (e) {
+          console.warn('Could not load reviews report:', e);
+        }
 
         // Charts
-        initCharts(stats, globalBookings, globalRooms);
+        try {
+          initCharts(stats, globalBookings, globalRooms);
+        } catch (e) {
+          console.warn('Could not init charts:', e);
+        }
       } catch (err) {
         console.error('Failed to load portal data:', err);
         Toast.fire('error', 'Error loading data: ' + err.message);
       }
+    }
+
+    // Customer Reviews & Feedback Feature Logic
+    let globalReviews = [];
+
+    async function loadReviewsReport() {
+      const refreshBtn = document.getElementById('btnRefreshReviews');
+      if (refreshBtn) refreshBtn.innerHTML = '<i class="fa-solid fa-rotate fa-spin me-1"></i> Refreshing...';
+      try {
+        const reviews = await ApiService.getReviews();
+        globalReviews = Array.isArray(reviews) ? reviews : [];
+        // Sort newest reviews first (by createdAt and id descending)
+        globalReviews.sort((a, b) => {
+          const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+          const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+          if (dateB !== dateA) return dateB - dateA;
+          return (b.id || 0) - (a.id || 0);
+        });
+        renderReviewsReport(globalReviews);
+        safeSetText('reviewsCountBadge', globalReviews.length);
+      } catch (err) {
+        console.error('Failed to load reviews report:', err);
+        const tbody = document.getElementById('reviewsTableBody');
+        if (tbody && (!globalReviews || globalReviews.length === 0)) {
+          tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted"><i class="fa-regular fa-comment-dots fs-3 d-block mb-2 text-secondary"></i>No reviews submitted yet.</td></tr>`;
+        }
+      } finally {
+        if (refreshBtn) refreshBtn.innerHTML = '<i class="fa-solid fa-rotate me-1"></i> Refresh Data';
+      }
+    }
+
+    function renderReviewsReport(reviews) {
+      const total = reviews.length;
+      safeSetText('reportTotalReviews', total);
+      safeSetText('reportTotalVotes', `${total} Reviews`);
+
+      if (total === 0) {
+        safeSetText('reportAvgRating', '0.0');
+        safeSetText('reportSatisfactionRate', '0%');
+        safeSetText('reportRecommendRate', '0%');
+        safeSetHtml('reportStarsRow', '<i class="fa-solid fa-star text-secondary opacity-25"></i><i class="fa-solid fa-star text-secondary opacity-25"></i><i class="fa-solid fa-star text-secondary opacity-25"></i><i class="fa-solid fa-star text-secondary opacity-25"></i><i class="fa-solid fa-star text-secondary opacity-25"></i> <span class="text-muted ms-1 small" id="reportRatingDescriptor">No ratings yet</span>');
+        safeSetHtml('reportHighlightsContainer', '<div class="text-muted small py-2"><i class="fa-regular fa-comment-dots me-1"></i> No guest highlight tags submitted yet.</div>');
+        safeSetHtml('reportBreakdownContainer', '<div class="text-muted small py-2">No rating data available yet.</div>');
+        safeSetHtml('reviewsTableBody', `<tr><td colspan="7" class="text-center py-4 text-muted"><i class="fa-regular fa-comment-dots fs-3 d-block mb-2 text-secondary"></i>No reviews submitted yet.</td></tr>`);
+        return;
+      }
+
+      let sum = 0;
+      const countByStar = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+      reviews.forEach(r => {
+        const star = Math.min(5, Math.max(1, Math.round(Number(r.rating) || 5)));
+        countByStar[star] = (countByStar[star] || 0) + 1;
+        sum += (Number(r.rating) || 5);
+      });
+
+      const rawAvg = sum / total;
+      const avg = (Math.round(rawAvg * 10) / 10).toFixed(1);
+      const percentScore = Math.round((rawAvg / 5.0) * 100);
+      safeSetText('reportAvgRating', avg);
+
+      const highRatings = (countByStar[5] || 0) + (countByStar[4] || 0);
+      const satRate = Math.round((highRatings / total) * 100);
+      safeSetText('reportSatisfactionRate', `${satRate}%`);
+
+      const recommendRatings = highRatings + (countByStar[3] || 0);
+      const recRate = Math.round((recommendRatings / total) * 100);
+      safeSetText('reportRecommendRate', `${recRate}%`);
+
+      let descriptor = 'Exceptional';
+      if (rawAvg < 4.5 && rawAvg >= 4.0) descriptor = 'Very Good';
+      else if (rawAvg < 4.0 && rawAvg >= 3.0) descriptor = 'Good';
+      else if (rawAvg < 3.0 && rawAvg >= 2.0) descriptor = 'Fair';
+      else if (rawAvg < 2.0) descriptor = 'Needs Improvement';
+
+      let starsHtml = '';
+      for (let i = 1; i <= 5; i++) {
+        if (rawAvg >= i) {
+          starsHtml += '<i class="fa-solid fa-star text-warning"></i>';
+        } else if (rawAvg >= (i - 0.5)) {
+          starsHtml += '<i class="fa-solid fa-star-half-stroke text-warning"></i>';
+        } else {
+          starsHtml += '<i class="fa-solid fa-star text-secondary opacity-25"></i>';
+        }
+      }
+      starsHtml += ` <span class="text-muted ms-1 small fw-semibold" id="reportRatingDescriptor">${descriptor} (${percentScore}%)</span>`;
+      safeSetHtml('reportStarsRow', starsHtml);
+
+      let breakdownHtml = '';
+      for (let s = 5; s >= 1; s--) {
+        const cnt = countByStar[s] || 0;
+        const pct = total > 0 ? Math.round((cnt / total) * 100) : 0;
+        const color = s >= 4 ? 'bg-warning' : (s === 3 ? 'bg-info' : 'bg-danger');
+        breakdownHtml += `
+          <div class="d-flex align-items-center gap-2 small">
+            <span style="width: 50px;" class="fw-semibold text-nowrap">${s} <i class="fa-solid fa-star text-warning" style="font-size: 11px;"></i></span>
+            <div class="progress flex-grow-1" style="height: 8px;">
+              <div class="progress-bar ${color}" role="progressbar" style="width: ${pct}%;"></div>
+            </div>
+            <span style="width: 65px;" class="text-end text-muted font-monospace">${cnt} (${pct}%)</span>
+          </div>
+        `;
+      }
+      safeSetHtml('reportBreakdownContainer', breakdownHtml);
+
+      // Real Dynamic Highlights Aggregation from actual customer reviews
+      const knownTags = [
+        '🤝 Helpful Staff',
+        '✨ Sparkling Clean',
+        '🌅 Peaceful View',
+        '🛏️ Comfy Bed',
+        '🍳 Great Food',
+        '⚡ Fast WiFi'
+      ];
+      const tagCounts = {};
+      reviews.forEach(r => {
+        const comment = r.comment || '';
+        knownTags.forEach(tag => {
+          if (comment.includes(tag)) {
+            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+          }
+        });
+      });
+
+      const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+      let highlightsHtml = '';
+      if (sortedTags.length > 0) {
+        highlightsHtml = sortedTags.map(([tag, count]) => {
+          const pct = Math.round((count / total) * 100);
+          return `<span class="badge bg-primary-subtle text-primary border border-primary-subtle py-2 px-3 rounded-pill fs-7">
+            ${escapeHtml(tag)} <strong class="ms-1 text-dark">(${count} vote${count > 1 ? 's' : ''} &bull; ${pct}%)</strong>
+          </span>`;
+        }).join('');
+        const totalTagsCounted = sortedTags.reduce((acc, curr) => acc + curr[1], 0);
+        safeSetText('reportHighlightsCount', `${totalTagsCounted} Tag${totalTagsCounted > 1 ? 's' : ''} Praised`);
+      } else {
+        highlightsHtml = `<div class="text-muted small py-2"><i class="fa-regular fa-comment-dots me-1"></i> No guest highlight tags submitted yet.</div>`;
+        safeSetText('reportHighlightsCount', 'Live Guest Sentiment');
+      }
+      safeSetHtml('reportHighlightsContainer', highlightsHtml);
+
+      filterReviewsTable();
+    }
+
+    function filterReviewsTable() {
+      const knownTags = [
+        '🤝 Helpful Staff',
+        '✨ Sparkling Clean',
+        '🌅 Peaceful View',
+        '🛏️ Comfy Bed',
+        '🍳 Great Food',
+        '⚡ Fast WiFi'
+      ];
+      const search = (document.getElementById('reviewSearchInput')?.value || '').toLowerCase().trim();
+      const starFilter = document.getElementById('reviewStarFilter')?.value || 'ALL';
+
+      const filtered = globalReviews.filter(r => {
+        const star = String(Math.round(Number(r.rating) || 5));
+        if (starFilter !== 'ALL' && star !== starFilter) return false;
+
+        if (search) {
+          const guest = (r.guestName || r.customer?.fullName || '').toLowerCase();
+          const comment = (r.comment || '').toLowerCase();
+          const stay = (r.stayType || '').toLowerCase();
+          const loc = (r.location || '').toLowerCase();
+          if (!guest.includes(search) && !comment.includes(search) && !stay.includes(search) && !loc.includes(search)) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      // Sort newest feedback/reviews on top (descending by createdAt and ID)
+      filtered.sort((a, b) => {
+        const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        if (dateB !== dateA) return dateB - dateA;
+        return (b.id || 0) - (a.id || 0);
+      });
+
+      const tbody = document.getElementById('reviewsTableBody');
+      if (!tbody) return;
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">No reviews match your search filter.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map((r, idx) => {
+        const rating = Math.min(5, Math.max(1, Math.round(Number(r.rating) || 5)));
+        let starsHtml = '';
+        for (let i = 1; i <= 5; i++) {
+          starsHtml += `<i class="fa-solid fa-star ${i <= rating ? 'text-warning' : 'text-secondary opacity-25'}" style="font-size: 12px;"></i>`;
+        }
+        const guestName = escapeHtml(r.guestName || r.customer?.fullName || 'Verified Guest');
+        const email = escapeHtml(r.customer?.email || 'customer@booking.com');
+        const phone = escapeHtml(r.customer?.phone || '');
+        const rawComment = r.comment || 'Wonderful stay! Highly recommended.';
+        const stayType = escapeHtml(r.stayType || 'Verified Stay');
+        const loc = escapeHtml(r.location || 'Kandal, Cambodia');
+        const dateStr = r.createdAt ? new Date(r.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recent Stay';
+
+        const initial = guestName.charAt(0).toUpperCase() || 'G';
+
+        let commentText = rawComment;
+        let tagsHtml = '';
+        const foundTags = knownTags.filter(t => rawComment.includes(t));
+        if (foundTags.length > 0) {
+          tagsHtml = foundTags.map(t => `<span class="badge bg-warning-subtle text-warning-emphasis me-1 mb-1 border border-warning-subtle" style="font-size: 10px;">${escapeHtml(t)}</span>`).join('');
+          let cleaned = rawComment.replace('Highlights:', '');
+          foundTags.forEach(t => {
+            cleaned = cleaned.replace(t, '');
+          });
+          commentText = cleaned.replace(/,\s*,/g, ',').replace(/^[\s,]+|[\s,]+$/g, '').trim();
+        }
+
+        const reviewId = r.id != null ? r.id : (idx + 1);
+
+        return `
+          <tr>
+            <td class="text-muted small font-monospace text-center align-middle">
+              <span class="fw-bold text-dark">${reviewId}</span>
+            </td>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-circle bg-primary bg-opacity-10 text-primary fw-bold d-flex align-items-center justify-content-center border border-primary-subtle" style="width: 36px; height: 36px; min-width: 36px; font-size: 13px;">
+                  ${initial}
+                </div>
+                <div style="min-width: 0;">
+                  <div class="fw-bold text-dark small text-truncate">${guestName} <span class="badge bg-success-subtle text-success ms-1" style="font-size: 9px;"><i class="fa-solid fa-circle-check"></i> Verified</span></div>
+                  <div class="text-muted text-truncate" style="font-size: 11px;">${email} ${phone ? '&bull; ' + phone : ''}</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="text-nowrap">${starsHtml}</div>
+              <span class="badge bg-warning-subtle text-warning-emphasis mt-1 font-monospace" style="font-size: 10px;">${rating}.0 / 5.0</span>
+            </td>
+            <td>
+              <span class="badge bg-light text-dark border px-2 py-1"><i class="fa-solid fa-user-group me-1 text-primary"></i>${stayType}</span>
+            </td>
+            <td>
+              <span class="small text-muted"><i class="fa-solid fa-location-dot text-danger me-1"></i>${loc}</span>
+            </td>
+            <td>
+              <div class="p-2 rounded bg-light border small text-dark">
+                ${commentText ? `<div class="mb-1"><i class="fa-solid fa-quote-left text-muted me-1"></i>${escapeHtml(commentText)}</div>` : ''}
+                ${tagsHtml ? `<div class="mt-1 d-flex flex-wrap gap-1">${tagsHtml}</div>` : ''}
+              </div>
+            </td>
+            <td>
+              <span class="small text-muted font-monospace text-nowrap">${dateStr}</span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function exportReviewsCsv() {
+      if (!globalReviews || globalReviews.length === 0) {
+        Toast.fire('info', 'No reviews to export.');
+        return;
+      }
+      let csv = 'ID,Guest Name,Rating,Stay Type,Location,Date,Comment\n';
+      globalReviews.forEach((r, i) => {
+        const guest = `"${(r.guestName || r.customer?.fullName || '').replace(/"/g, '""')}"`;
+        const rating = r.rating || 5;
+        const stay = `"${(r.stayType || '').replace(/"/g, '""')}"`;
+        const loc = `"${(r.location || '').replace(/"/g, '""')}"`;
+        const date = `"${r.createdAt || ''}"`;
+        const comment = `"${(r.comment || '').replace(/"/g, '""')}"`;
+        csv += `${i + 1},${guest},${rating},${stay},${loc},${date},${comment}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `customer_reviews_report_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      Toast.fire('success', 'Customer reviews exported to CSV successfully!');
     }
 
     function escapeHtml(str) {
@@ -1929,6 +3025,19 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+    }
+
+    function formatPhone(str) {
+      if (!str) return '-';
+      const d = String(str).replace(/\D/g, '');
+      if (d.length === 9) {
+        return `${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}`;
+      } else if (d.length === 10) {
+        return `${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}`;
+      } else if (d.length === 8) {
+        return `${d.slice(0, 3)}-${d.slice(3, 5)}-${d.slice(5)}`;
+      }
+      return str;
     }
 
     function filterAndRenderRooms() {
@@ -2105,11 +3214,15 @@
                 </button>
               `).join('')}
             </div>
+
           </div>
+
           <div class="text-muted" style="font-size: 10.5px;">
             <strong>Existing Rooms (${existing.length}):</strong> ${existing.sort((a,b) => a.localeCompare(b, undefined, {numeric: true})).join(', ')}
           </div>
+
         </div>
+
       `;
     }
 
@@ -2133,6 +3246,7 @@
                     <i class="fa-solid fa-door-closed"></i>
                   </span>
                 </div>
+
                 <h5 class="fw-bold mb-1 text-dark">No Room #${escapeHtml(query)} Found</h5>
                 <p class="text-muted small mb-3">Room #${escapeHtml(query)} is not yet in your hotel inventory.</p>
                 <div class="d-flex justify-content-center gap-2">
@@ -2144,13 +3258,17 @@
                     Clear Search
                   </button>
                 </div>
+
               </div>
-            </div>`;
+
+            </div>
+`;
         } else {
           container.innerHTML = `<div class="col-12 text-center py-5 text-muted">
             <i class="fa-solid fa-bed fa-3x mb-3 text-secondary"></i>
             <h6>No rooms found. Click "Add New Room" above to set up your hotel inventory!</h6>
-          </div>`;
+          </div>
+`;
         }
         return;
       }
@@ -2168,7 +3286,33 @@
           : `<div class="w-100 d-flex flex-column align-items-center justify-content-center bg-light text-muted border-bottom" style="height: 180px;">
               <i class="fa-solid fa-bed fs-1 mb-2 opacity-50"></i>
               <span class="small fw-semibold text-secondary">No photo uploaded</span>
-            </div>`;
+            </div>
+`;
+
+        const tierUpper = (r.roomTier || 'STANDARD').toUpperCase();
+        let tierBadgeHtml = '';
+        if (tierUpper === 'DELUXE') {
+          tierBadgeHtml = '<span class="badge bg-info-subtle text-info-emphasis border border-info-subtle py-1" style="font-size: 11px;"><i class="fa-solid fa-snowflake text-info me-1"></i>Deluxe Room</span>';
+        } else if (tierUpper === 'PREMIUM' || tierUpper === 'VIP') {
+          tierBadgeHtml = '<span class="badge bg-warning-subtle text-dark border border-warning-subtle py-1" style="font-size: 11px;"><i class="fa-solid fa-crown text-warning me-1"></i>Premium Room</span>';
+        } else {
+          tierBadgeHtml = '<span class="badge bg-success-subtle text-success border border-success-subtle py-1" style="font-size: 11px;"><i class="fa-solid fa-circle-check text-success me-1"></i>Standard Room</span>';
+        }
+
+        const rawFood = (r.foodType || '').trim();
+        const hasMeal = (r.includesBreakfast === true) || (
+          rawFood !== '' &&
+          !rawFood.toLowerCase().includes('room only') &&
+          !rawFood.toLowerCase().includes('no breakfast')
+        );
+        const foodLabel = rawFood || (hasMeal ? 'Breakfast included' : 'Room only');
+        const foodBadgeHtml = hasMeal
+          ? `<span class="badge bg-success-subtle text-success border border-success-subtle py-1" style="font-size: 11px;" title="Meal Plan: Food included">
+              <i class="fa-solid fa-utensils me-1"></i>${escapeHtml(foodLabel)}
+            </span>`
+          : `<span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle py-1" style="font-size: 11px;" title="Meal Plan: Room only (No breakfast)">
+              <i class="fa-solid fa-ban me-1 text-muted"></i>${escapeHtml(foodLabel)}
+            </span>`;
 
         const statusBadge = r.status === 'AVAILABLE'
           ? '<span class="position-absolute top-0 end-0 m-3 badge bg-success shadow-sm text-white" style="font-size: 11px;"><i class="fa-solid fa-circle-check me-1"></i>Available</span>'
@@ -2188,6 +3332,7 @@
                 </span>
                 ${statusBadge}
               </div>
+
               <div class="p-3 flex-grow-1 d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-start mb-1">
                   <div>
@@ -2197,32 +3342,34 @@
                       <span class="badge bg-primary text-white ms-1" style="font-size: 10px;">★ ${Number(r.rating || 4.8).toFixed(1)}</span>
                       <span class="text-muted ms-1" style="font-size: 10px;">(${r.reviewCount || 128} reviews)</span>
                     </div>
+
                   </div>
+
                   <div class="text-end">
                     <span class="fs-5 fw-bold text-primary">$${r.priceUsd}</span>
                     <small class="text-muted d-block" style="font-size:0.75rem;">/ night</small>
                   </div>
+
                 </div>
+
                 <div class="small text-muted mb-2">
                   <i class="fa-solid fa-bed me-1 text-secondary"></i> ${r.bedType || '1 King Bed'} &bull;
                   <i class="fa-solid fa-user-group ms-1 me-1 text-secondary"></i> Up to ${r.maxGuests} Guests &bull;
                   <span class="fw-semibold ${r.status === 'AVAILABLE' ? 'text-success' : (r.status === 'CLEANING' ? 'text-warning' : 'text-danger')}">${r.status === 'AVAILABLE' ? 'Available' : (r.status === 'CLEANING' ? 'Housekeeping' : 'Booked')}</span>
                 </div>
+
                 <div class="mb-2 d-flex flex-wrap gap-1">
-                  <span class="badge bg-success-subtle text-success border border-success-subtle py-1" style="font-size: 11px;">
-                    <i class="fa-solid fa-utensils me-1"></i>${r.foodType || 'Breakfast included'}
+                  <span class="badge bg-primary-subtle text-primary border border-primary-subtle py-1" style="font-size: 11px;">
+                    <i class="fa-solid fa-bed me-1"></i>${escapeHtml(r.type || 'ROOM')}
                   </span>
+                  ${tierBadgeHtml}
+                  ${foodBadgeHtml}
                   ${r.mapUrl ? `<a href="${r.mapUrl}" target="_blank" class="badge bg-light text-secondary border py-1 text-decoration-none">
                     <i class="fa-solid fa-location-dot text-danger me-1"></i>Map Location
                   </a>` : ''}
                 </div>
+
                 <p class="small text-secondary mb-3 flex-grow-1 text-truncate-2">${r.description || 'Spacious and comfortable room with modern amenities.'}</p>
-                
-                ${r.status === 'CLEANING' ? `
-                  <button class="btn btn-sm btn-warning text-dark fw-bold w-100 mb-2 shadow-sm" onclick="markRoomCleanedPrompt(${r.id}, '${escapeHtml(r.name || r.roomNumber)}')">
-                    <i class="fa-solid fa-broom me-1"></i> Clean &amp; Release to Mobile App
-                  </button>
-                ` : ''}
 
                 <div class="d-flex gap-2 pt-2 border-top mt-auto">
                   <button class="btn btn-sm btn-outline-primary flex-grow-1" onclick="openEditRoomModal(${r.id})">
@@ -2232,9 +3379,13 @@
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         `;
       }).join('');
     }
@@ -2242,11 +3393,11 @@
     function renderBookings(bookings) {
       const tbody = document.getElementById('bookingsTableBody');
       if (!bookings || bookings.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="text-center py-5 text-muted">No reservations found for your hotel.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" class="text-center py-5 text-muted">No reservations found for your hotel.</td></tr>`;
         return;
       }
 
-      tbody.innerHTML = bookings.map(b => {
+      tbody.innerHTML = bookings.map((b, index) => {
         let badgeClass = 'badge-confirmed';
         if (b.status === 'PENDING') badgeClass = 'badge-pending';
         if (b.status === 'CHECKED_IN') badgeClass = 'badge-checkedin';
@@ -2273,25 +3424,36 @@
 
         const guestName = b.guestName || (b.user ? b.user.fullName : 'Guest');
         const roomTitle = b.room ? (b.room.name || b.room.type + ' Room') : (b.service ? b.service.name : 'Deluxe Room');
-        const roomIdSafe = b.room ? b.room.id : null;
+        const roomIdSafe = b.room ? b.room.id : (b.items && b.items.length > 0 && b.items[0].room ? b.items[0].room.id : (b.roomId || null));
 
-        // Check if room needs cleaning
+        // Check if room needs cleaning ONLY for the most recent completed checkout of that room
         const liveRoom = roomIdSafe ? (globalRooms || []).find(r => r.id === roomIdSafe) : null;
-        const isCleaningNeeded = liveRoom ? (liveRoom.status === 'CLEANING') : false;
+        const isLatestBookingForRoom = roomIdSafe ? ((globalBookings || [])
+          .filter(x => (x.room && x.room.id === roomIdSafe) || (x.items && x.items.some(i => i.room && i.room.id === roomIdSafe)))
+          .sort((x, y) => (y.id || 0) - (x.id || 0))[0]?.id === b.id) : false;
+        const isCleaningNeeded = (liveRoom && liveRoom.status === 'CLEANING' && isLatestBookingForRoom);
 
         let actionButtonsHtml = '';
         if (b.status === 'PENDING') {
-          actionButtonsHtml = `
-            <button class="btn btn-sm btn-success fw-semibold" onclick="approveBooking(${b.id})" title="Approve Reservation">
-              <i class="fa-solid fa-check me-1"></i> Approve
-            </button>
-            <button class="btn btn-sm btn-primary fw-bold shadow-sm" onclick="promptCheckIn(${b.id}, '${escapeHtml(b.bookingCode)}', '${escapeHtml(guestName)}', '${escapeHtml(roomTitle)}')" title="Check In Guest Immediately">
-              <i class="fa-solid fa-key me-1"></i> Check In
-            </button>
-            <button class="btn btn-sm btn-outline-danger" onclick="rejectBooking(${b.id})" title="Reject">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          `;
+          if (pStatus === 'UNPAID') {
+            actionButtonsHtml = `
+              <span class="badge bg-warning-subtle text-warning-emphasis border border-warning px-2 py-1 small me-1">
+                <i class="fa-solid fa-clock-rotate-left me-1"></i>Awaiting Payment
+              </span>
+              <button class="btn btn-sm btn-outline-danger" onclick="rejectBooking(${b.id})" title="Cancel">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            `;
+          } else {
+            actionButtonsHtml = `
+              <button class="btn btn-sm btn-success fw-semibold" onclick="approveBooking(${b.id})" title="Approve Reservation">
+                <i class="fa-solid fa-check me-1"></i> Approve
+              </button>
+              <button class="btn btn-sm btn-outline-danger" onclick="rejectBooking(${b.id})" title="Reject">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            `;
+          }
         } else if (b.status === 'CONFIRMED') {
           actionButtonsHtml = `
             <button class="btn btn-sm btn-primary fw-bold shadow-sm px-3" onclick="promptCheckIn(${b.id}, '${escapeHtml(b.bookingCode)}', '${escapeHtml(guestName)}', '${escapeHtml(roomTitle)}')" title="Guest Check-In">
@@ -2327,13 +3489,18 @@
 
         return `
           <tr>
+            <td class="text-center align-middle">
+              <span class="badge bg-primary-subtle text-primary border border-primary-subtle font-monospace fw-bold px-3 py-2 fs-6">
+                #${b.id || (index + 1)}
+              </span>
+            </td>
             <td>
               <span class="font-monospace fw-bold text-primary">${escapeHtml(b.bookingCode)}</span>
               <small class="d-block text-muted">${new Date(b.createdAt).toLocaleDateString()}</small>
             </td>
             <td>
               <strong>${escapeHtml(guestName)}</strong>
-              <small class="d-block text-muted"><i class="fa-solid fa-phone me-1"></i>${escapeHtml(b.guestPhone || '-')}</small>
+              <small class="d-block text-muted"><i class="fa-solid fa-phone me-1"></i>${escapeHtml(formatPhone(b.guestPhone))}</small>
             </td>
             <td>
               <strong>${escapeHtml(roomTitle)}</strong>
@@ -2362,6 +3529,7 @@
                 </button>
                 ${actionButtonsHtml}
               </div>
+
             </td>
           </tr>
         `;
@@ -2379,11 +3547,14 @@
               <div class="fw-bold text-dark mt-1"><i class="fa-solid fa-user me-1 text-secondary"></i> ${escapeHtml(guestName)}</div>
               <div class="text-secondary small mt-1"><i class="fa-solid fa-bed me-1 text-secondary"></i> ${escapeHtml(roomName)}</div>
             </div>
+
             <div class="alert alert-info py-2 px-3 small mb-0">
               <i class="fa-solid fa-circle-info me-1"></i>
               This will update booking status to <strong>CHECKED_IN</strong> and mark the room as <strong>Booked / In-House</strong>.
             </div>
+
           </div>
+
         `,
         icon: 'question',
         showCancelButton: true,
@@ -2413,28 +3584,35 @@
               <span class="text-muted small">Booking Reference:</span>
               <span class="font-monospace fw-bold text-primary">${escapeHtml(code)}</span>
             </div>
+
             <div class="d-flex justify-content-between align-items-center mb-1">
               <span class="text-muted small">Guest Name:</span>
               <span class="fw-bold text-dark">${escapeHtml(guestName)}</span>
             </div>
+
             <div class="d-flex justify-content-between align-items-center mb-1">
               <span class="text-muted small">Room Assigned:</span>
               <span class="fw-bold text-dark">${escapeHtml(roomName)}</span>
             </div>
+
             <hr class="my-2">
             <div class="d-flex justify-content-between align-items-center mb-1">
               <span class="text-muted">Total Room Bill:</span>
               <span class="fw-bold fs-6 text-dark">$${Number(finalPrice).toFixed(2)}</span>
             </div>
+
             <div class="d-flex justify-content-between align-items-center mb-1">
               <span class="text-muted">Paid Amount:</span>
               <span class="fw-bold text-success">$${Number(amountPaid).toFixed(2)}</span>
             </div>
+
             <div class="d-flex justify-content-between align-items-center">
               <span class="fw-bold ${balanceDue > 0.01 ? 'text-danger' : 'text-success'}">Balance Due:</span>
               <span class="fw-bold fs-5 ${balanceDue > 0.01 ? 'text-danger' : 'text-success'}">$${Number(balanceDue).toFixed(2)}</span>
             </div>
+
           </div>
+
           
           ${balanceDue > 0.01 ? `
             <div class="alert alert-warning py-2 px-3 small mb-3">
@@ -2442,18 +3620,22 @@
               <strong>Remaining Balance $${Number(balanceDue).toFixed(2)}:</strong>
               Confirming checkout will record full bill settlement.
             </div>
+
           ` : `
             <div class="alert alert-success py-2 px-3 small mb-3">
               <i class="fa-solid fa-circle-check me-1"></i>
               <strong>Bill Settled in Full!</strong> Customer has paid $${Number(amountPaid).toFixed(2)}.
             </div>
+
           `}
           
-          <div class="alert alert-warning py-2 px-3 small mb-0 border border-warning-subtle bg-warning bg-opacity-10 text-dark">
+          <div class="alert alert-warning py-2 px-3 small mb-0 border border-warning-subtle">
             <i class="fa-solid fa-broom me-1 text-warning"></i>
             <strong>Housekeeping Notice:</strong> Upon check-out, <strong>${escapeHtml(roomName)}</strong> will be automatically placed into <strong>"Needs Cleaning"</strong> state and temporarily hidden from the Customer Mobile App until you click <strong>"Clean Room"</strong>.
           </div>
+
         </div>
+
       `;
 
       const result = await Swal.fire({
@@ -2493,19 +3675,23 @@
                     <span class="text-success fw-semibold"><i class="fa-solid fa-circle-check me-1"></i> Total Customer Payment:</span>
                     <span class="fs-4 fw-bold text-success">$${Number(finalPrice).toFixed(2)}</span>
                   </div>
+
                   <small class="text-muted d-block mt-1">This revenue has been dynamically summed into your Hotel Revenue Overview card & chart.</small>
                 </div>
+
                 
-                <div class="p-3 bg-warning bg-opacity-10 rounded border border-warning-subtle">
-                  <div class="fw-bold text-dark mb-1"><i class="fa-solid fa-broom text-warning me-1"></i> Room Requires Housekeeping</div>
-                  <p class="small text-muted mb-2"><strong>${escapeHtml(roomName)}</strong> is currently in <strong>CLEANING</strong> status and cannot be booked in the Mobile App.</p>
+                <div class="p-3 alert-warning rounded border border-warning-subtle">
+                  <div class="fw-bold mb-1"><i class="fa-solid fa-broom text-warning me-1"></i> Room Requires Housekeeping</div>
+                  <p class="small mb-2"><strong>${escapeHtml(roomName)}</strong> is currently in <strong>CLEANING</strong> status and cannot be booked in the Mobile App.</p>
                   ${roomId ? `
                     <button class="btn btn-warning btn-sm fw-bold w-100" onclick="Swal.close(); markRoomCleanedPrompt(${roomId}, '${escapeHtml(roomName)}');">
                       <i class="fa-solid fa-broom me-1"></i> Clean & Release Room to App Now
                     </button>
                   ` : ''}
                 </div>
+
               </div>
+
             `,
             icon: 'success',
             confirmButtonColor: '#10b981',
@@ -2531,11 +3717,14 @@
               <div class="fw-bold fs-6 text-dark"><i class="fa-solid fa-bed me-2 text-primary"></i> ${escapeHtml(roomName)}</div>
               <span class="badge bg-warning text-dark mt-2"><i class="fa-solid fa-broom me-1"></i> Current Status: Housekeeping / Cleaning</span>
             </div>
+
             <div class="alert alert-success py-2 px-3 small mb-0">
               <i class="fa-solid fa-mobile-screen-button me-1"></i>
               Clicking <strong>"Mark Clean & Ready"</strong> will immediately release this room back to <strong>AVAILABLE</strong> status in the <strong>Customer Mobile App</strong> so new guests can book it!
             </div>
+
           </div>
+
         `,
         icon: 'question',
         showCancelButton: true,
@@ -2560,6 +3749,116 @@
         }
       }
     }
+
+    let knownBookingMap = null;
+
+    function checkForNewAppBookings(bookings) {
+      if (!Array.isArray(bookings)) return;
+      
+      const currentMap = new Map();
+      bookings.forEach(b => {
+        currentMap.set(b.id, {
+          status: b.status,
+          paymentStatus: b.paymentStatus || 'UNPAID',
+          booking: b
+        });
+      });
+
+      if (knownBookingMap !== null) {
+        // Only alert when customer has actually paid, or when an unpaid booking transitions to PAID!
+        const alertableBookings = [];
+
+        bookings.forEach(b => {
+          const isConfirmedAndPaid = (b.status === 'CONFIRMED' && (b.paymentStatus === 'PAID' || b.paymentStatus === 'DEPOSIT')) ||
+                                    (b.status === 'CONFIRMED' && b.paymentMethod === 'CASH');
+
+          if (!isConfirmedAndPaid) return; // Do NOT alert dashboard while customer hasn't paid!
+
+          const prev = knownBookingMap.get(b.id);
+          if (!prev) {
+            // Newly arrived booking that is already confirmed and paid
+            alertableBookings.push({ booking: b, reason: 'NEW_PAID' });
+          } else if (prev.paymentStatus === 'UNPAID' && (b.paymentStatus === 'PAID' || b.paymentStatus === 'DEPOSIT')) {
+            // Customer just scanned QR and completed payment in real time!
+            alertableBookings.push({ booking: b, reason: 'JUST_PAID' });
+          }
+        });
+
+        if (alertableBookings.length > 0) {
+          alertableBookings.forEach(({ booking: b, reason }) => {
+            const guest = b.guestName || (b.user ? b.user.fullName : 'Customer');
+            const roomName = b.room ? (b.room.name || `Room ${b.room.roomNumber}`) : 'Room';
+            const amount = Number(b.amountPaid || b.finalPrice || 0).toFixed(2);
+            const isJustPaid = reason === 'JUST_PAID';
+
+            Swal.fire({
+              title: isJustPaid ? '💰 Payment Confirmed!' : '🛎️ New Paid Booking Received!',
+              html: `
+                <div class="text-start">
+                  <p class="mb-2">${isJustPaid ? 'Guest has just <strong>completed payment</strong> via Bakong KHQR:' : 'A customer has booked and <strong>completed payment</strong>:'}</p>
+                  <div class="p-3 bg-light rounded border mb-3">
+                    <div class="fw-bold fs-6 text-primary">${escapeHtml(b.bookingCode || '')}</div>
+                    <div class="fw-bold text-dark mt-1"><i class="fa-solid fa-user me-1 text-secondary"></i> ${escapeHtml(guest)}</div>
+                    <div class="text-secondary small mt-1"><i class="fa-solid fa-bed me-1 text-secondary"></i> ${escapeHtml(roomName)}</div>
+                    <div class="text-dark small mt-1"><i class="fa-solid fa-calendar me-1 text-secondary"></i> ${escapeHtml(b.checkIn || '')} → ${escapeHtml(b.checkOut || '')}</div>
+                    <div class="text-success fw-bold small mt-2"><i class="fa-solid fa-circle-check me-1"></i> Paid: $${amount} USD (${escapeHtml(b.paymentMethod || 'KHQR')})</div>
+                    <div class="text-muted small mt-1">Recipient Bakong: <code>sen_tongheng@bkrt</code></div>
+                  </div>
+
+                  <div class="alert alert-success py-2 px-3 small mb-0">
+                    <i class="fa-solid fa-bell me-1"></i>
+                    Status: <strong>CONFIRMED & PAID</strong>. The <strong>[ Check In ]</strong> button is now available in your Reservations list!
+                  </div>
+                </div>
+              `,
+              icon: 'success',
+              confirmButtonColor: '#2563eb',
+              confirmButtonText: '<i class="fa-solid fa-key me-1"></i> View in Reservations'
+            }).then(() => {
+              switchTab('bookings');
+            });
+            Toast.fire('success', `💰 Payment confirmed for booking: ${b.bookingCode}`);
+          });
+        }
+      }
+      knownBookingMap = currentMap;
+    }
+
+    // Auto-polling every 8 seconds to listen for new customer mobile app bookings in real-time without flickering
+    setInterval(async () => {
+      try {
+        if (Auth.isAuthenticated()) {
+          const freshBookings = await ApiService.getAdminBookings();
+          if (Array.isArray(freshBookings)) {
+            // Strictly filter paid/deposit bookings to match globalBookings
+            const paidFresh = freshBookings.filter(b => {
+              const pStatus = (b.paymentStatus || '').toUpperCase();
+              const paidAmt = Number(b.amountPaid || 0);
+              return (pStatus === 'PAID' || pStatus === 'DEPOSIT' || paidAmt > 0) && b.status !== 'CANCELLED';
+            });
+            paidFresh.sort((a, b) => (b.id || 0) - (a.id || 0));
+
+            const freshSig = paidFresh.map(b => `${b.id}:${b.status}:${b.paymentStatus || ''}`).join('|');
+            const currentSig = (globalBookings || []).map(b => `${b.id}:${b.status}:${b.paymentStatus || ''}`).join('|');
+            if (freshSig !== currentSig) {
+              globalBookings = paidFresh;
+              checkForNewAppBookings(globalBookings);
+              renderBookings(globalBookings);
+              try {
+                const stats = await ApiService.getAdminStats();
+                safeSetText('statBookings', stats.totalBookings || 0);
+                safeSetText('statConfirmedBookings', stats.confirmedBookings || 0);
+                safeSetText('statPendingBookings', stats.pendingBookings || 0);
+                safeSetText('statRevenue', Number(stats.totalRevenueUsd || 0).toLocaleString());
+                safeSetText('statRevenueKhr', Number(stats.totalRevenueKhr || 0).toLocaleString());
+              } catch (_) {}
+            }
+          }
+        }
+      } catch (e) {
+        // Silent catch for background poll
+      }
+    }, 8000);
 
     function promptCollectPayment(bookingId, code, dueAmount) {
       document.getElementById('payBookingId').value = bookingId;
@@ -2596,7 +3895,7 @@
     async function openInvoiceModal(bookingId) {
       const area = document.getElementById('printableInvoiceArea');
       area.innerHTML = '<div class="text-center py-5"><div class="spinner-border text-primary" role="status"></div><p class="text-muted mt-2">Generating invoice...</p></div>';
-      new bootstrap.Modal(document.getElementById('invoiceModal')).show();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById('invoiceModal')).show();
 
       try {
         const b = await ApiService.getBookingById(bookingId);
@@ -2657,6 +3956,7 @@
               <span><i class="fa-solid fa-receipt text-success me-1"></i> ${p.paymentType} (${p.method}) - ${new Date(p.paidAt || p.createdAt).toLocaleString()}</span>
               <strong class="text-success">-$${Number(p.amountUsd || 0).toFixed(2)}</strong>
             </div>
+
           `).join('');
         }
 
@@ -2669,12 +3969,15 @@
                 <div class="text-muted small">${hotel.address || 'Cambodia'}</div>
                 <div class="text-muted small">Tel: ${hotel.phone || '-'} &bull; Email: ${hotel.email || '-'}</div>
               </div>
+
               <div class="text-end">
                 <span class="badge bg-dark fs-6 px-3 py-2 mb-1">OFFICIAL INVOICE</span>
                 <div class="font-monospace fw-bold text-secondary mt-1">#INV-${b.bookingCode}</div>
                 <small class="text-muted">Issued: ${new Date().toLocaleDateString()}</small>
               </div>
+
             </div>
+
 
             <!-- Billed To & Dates -->
             <div class="row g-3 mb-4">
@@ -2682,10 +3985,12 @@
                 <div class="p-3 bg-light rounded border">
                   <span class="small text-muted text-uppercase fw-bold d-block mb-1">Guest Information</span>
                   <div class="fw-bold text-dark fs-6">${b.guestName}</div>
-                  <div class="small text-muted"><i class="fa-solid fa-phone me-1"></i> ${b.guestPhone}</div>
+                  <div class="small text-muted"><i class="fa-solid fa-phone me-1"></i> ${formatPhone(b.guestPhone)}</div>
                   ${b.guestEmail ? `<div class="small text-muted"><i class="fa-solid fa-envelope me-1"></i> ${b.guestEmail}</div>` : ''}
                 </div>
+
               </div>
+
               <div class="col-6">
                 <div class="p-3 bg-light rounded border">
                   <span class="small text-muted text-uppercase fw-bold d-block mb-1">Reservation Schedule</span>
@@ -2693,17 +3998,23 @@
                     <span class="text-muted">Check-in:</span>
                     <strong class="text-dark">${b.checkIn} (from 2:00 PM)</strong>
                   </div>
+
                   <div class="d-flex justify-content-between small mb-1">
                     <span class="text-muted">Check-out:</span>
                     <strong class="text-dark">${b.checkOut} (until 12:00 PM)</strong>
                   </div>
+
                   <div class="d-flex justify-content-between small">
                     <span class="text-muted">Duration:</span>
                     <strong class="text-primary">${b.totalNights || 1} Night(s) Stay</strong>
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
 
             <!-- Items Table -->
             <table class="table table-bordered mb-3">
@@ -2732,52 +4043,68 @@
                     <span class="text-muted">Payment Status:</span>
                     <strong class="badge ${dueUsd <= 0 ? 'bg-success' : 'bg-warning text-dark'} ms-1">${b.paymentStatus || 'UNPAID'}</strong>
                   </div>
+
                 </div>
+
               </div>
+
               <div class="col-6">
                 <div class="p-3 bg-light rounded border">
                   <div class="d-flex justify-content-between small mb-1">
                     <span class="text-muted">Subtotal (Rooms &amp; Extras):</span>
                     <span>$${subtotal}</span>
                   </div>
+
                   ${discount > 0 ? `
                     <div class="d-flex justify-content-between small mb-1 text-success">
                       <span>Coupon Discount (${b.couponCode || 'PROMO'}):</span>
                       <strong>-$${discount}</strong>
                     </div>
+
                   ` : ''}
                   <div class="d-flex justify-content-between small mb-1">
-                    <span class="text-muted">Service Charge (5%):</span>
+                    <span class="text-muted">Service Charge (1%):</span>
                     <span>+$${serviceCharge}</span>
                   </div>
+
                   <div class="d-flex justify-content-between small mb-2">
-                    <span class="text-muted">Government &amp; City Tax (10%):</span>
+                    <span class="text-muted">Government &amp; City Tax (1%):</span>
                     <span>+$${tax}</span>
                   </div>
+
                   <div class="d-flex justify-content-between border-top pt-2 mb-2">
                     <span class="fw-bold fs-6">Grand Total:</span>
                     <div class="text-end">
                       <strong class="fs-5 text-dark">$${finalUsd}</strong>
                       <div class="small text-muted">≈ ${finalKhr} KHR</div>
                     </div>
+
                   </div>
+
                   <div class="d-flex justify-content-between border-top pt-2 small">
                     <span class="text-muted">Total Paid / Deposit:</span>
                     <strong class="text-success">$${paidUsd}</strong>
                   </div>
+
                   <div class="d-flex justify-content-between pt-1 small">
                     <span class="text-muted">Balance Due at Check-in:</span>
                     <strong class="${dueUsd > 0 ? 'text-danger' : 'text-success'} fs-6">$${dueUsd}</strong>
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
 
             <!-- Footer Policy -->
             <div class="mt-4 pt-3 border-top text-center text-muted small" style="font-size: 11px;">
               Thank you for choosing ${hotel.name}! Free cancellation up to 48 hours prior to check-in.
             </div>
+
           </div>
+
         `;
       } catch (err) {
         area.innerHTML = `<div class="alert alert-danger">Failed to load invoice details: ${err.message}</div>`;
@@ -2874,7 +4201,7 @@
         b.classList.remove('active', 'btn-dark', 'btn-success', 'btn-warning', 'btn-danger');
         if (b.id === 'btnCustFilterAll') b.classList.add('btn-outline-dark');
         if (b.id === 'btnCustFilterApproved') b.classList.add('btn-outline-success');
-        if (b.id === 'btnCustFilterPending') b.classList.add('btn-outline-warning', 'text-dark');
+        if (b.id === 'btnCustFilterPending') b.classList.add('btn-outline-warning');
         if (b.id === 'btnCustFilterSuspended') b.classList.add('btn-outline-danger');
       });
 
@@ -2945,17 +4272,20 @@
                 <div class="rounded-circle bg-info bg-opacity-10 text-info fw-bold d-flex align-items-center justify-content-center" style="width:38px;height:38px;font-size:15px;flex-shrink:0;">
                   ${initial}
                 </div>
+
                 <div>
                   <strong class="text-dark d-block">${escapeHtml(u.fullName || 'Guest User')}</strong>
                   <small class="text-muted" style="font-size:11px;"><i class="fa-regular fa-clock me-1"></i>Joined ${u.createdAt ? new Date(u.createdAt).toLocaleDateString() : 'Active'}</small>
                 </div>
+
               </div>
+
             </td>
             <td>
               <span class="text-dark">${escapeHtml(u.email || '-')}</span>
             </td>
             <td>
-              <span class="font-monospace text-secondary">${escapeHtml(u.phone || '-')}</span>
+              <span class="font-monospace text-secondary">${escapeHtml(formatPhone(u.phone))}</span>
             </td>
             <td>
               <span class="badge ${isApproved ? 'bg-success text-white' : 'bg-warning text-dark'} py-1 px-2">
@@ -3006,6 +4336,7 @@
                   <i class="fa-solid fa-trash-can"></i>
                 </button>
               </div>
+
             </td>
           </tr>
         `;
@@ -3042,7 +4373,7 @@
         if (elEmail) elEmail.innerText = u.email || 'None';
 
         const elPhone = document.getElementById('modalCustPhone');
-        if (elPhone) elPhone.innerText = u.phone || 'None';
+        if (elPhone) elPhone.innerText = formatPhone(u.phone);
 
         const elAddress = document.getElementById('modalCustAddress');
         if (elAddress) elAddress.innerText = u.address || 'Phnom Penh, Cambodia';
@@ -3098,7 +4429,8 @@
             historyContainer.innerHTML = `
               <div class="p-3 text-center text-muted small bg-light rounded border">
                 <i class="fa-solid fa-bed me-1 text-secondary"></i> No room reservations recorded for this customer yet.
-              </div>`;
+              </div>
+`;
           } else {
             historyContainer.innerHTML = `
               <div class="table-responsive">
@@ -3130,7 +4462,8 @@
                     }).join('')}
                   </tbody>
                 </table>
-              </div>`;
+              </div>
+`;
           }
         }
 
@@ -3271,6 +4604,7 @@
                 <div class="rounded-circle ${u.role === 'ADMIN' ? 'bg-danger bg-opacity-10 text-danger' : 'bg-primary bg-opacity-10 text-primary'} fw-bold d-flex align-items-center justify-content-center" style="width:38px;height:38px;font-size:15px;flex-shrink:0;">
                   <i class="fa-solid ${roleIcon}"></i>
                 </div>
+
                 <div>
                   <strong class="text-dark d-block">
                     ${escapeHtml(u.fullName || 'Admin User')}
@@ -3278,13 +4612,15 @@
                   </strong>
                   <small class="text-muted" style="font-size:11px;"><i class="fa-regular fa-calendar me-1"></i>Joined ${u.createdAt ? new Date(u.createdAt).toLocaleDateString() : 'System'}</small>
                 </div>
+
               </div>
+
             </td>
             <td>
               <span class="text-dark fw-semibold">${escapeHtml(u.email || '-')}</span>
             </td>
             <td>
-              <span class="font-monospace text-secondary">${escapeHtml(u.phone || '-')}</span>
+              <span class="font-monospace text-secondary">${escapeHtml(formatPhone(u.phone))}</span>
             </td>
             <td>
               <span class="badge ${roleBadgeClass} py-1 px-2 shadow-none font-monospace">
@@ -3340,6 +4676,7 @@
                 </button>
               `}
               </div>
+
             </td>
           </tr>
         `;
@@ -3663,6 +5000,7 @@
               &times;
             </button>
           </div>
+
         `).join('');
       }
     }
@@ -4030,7 +5368,15 @@
         document.getElementById('noPrepaymentInput').checked = document.getElementById('modalNoPrepaymentInput') ? document.getElementById('modalNoPrepaymentInput').checked : true;
       }
       if (document.getElementById('includesBreakfastInput')) {
-        document.getElementById('includesBreakfastInput').checked = document.getElementById('modalIncludesBreakfastInput') ? document.getElementById('modalIncludesBreakfastInput').checked : false;
+        const isBfast = document.getElementById('modalIncludesBreakfastInput') ? document.getElementById('modalIncludesBreakfastInput').checked : false;
+        document.getElementById('includesBreakfastInput').checked = isBfast;
+        if (document.getElementById('roomFoodTypeInput')) {
+          if (isBfast && (document.getElementById('roomFoodTypeInput').value.toLowerCase().includes('room only') || document.getElementById('roomFoodTypeInput').value.toLowerCase().includes('no breakfast'))) {
+            document.getElementById('roomFoodTypeInput').value = 'Breakfast included';
+          } else if (!isBfast) {
+            setFoodTypeSelectValue('Room only');
+          }
+        }
       }
       if (document.getElementById('includesMassageInput')) {
         document.getElementById('includesMassageInput').checked = document.getElementById('modalIncludesMassageInput') ? document.getElementById('modalIncludesMassageInput').checked : false;
@@ -4041,6 +5387,70 @@
       const modalEl = document.getElementById('tierConfigModal');
       const instance = bootstrap.Modal.getInstance(modalEl);
       if (instance) instance.hide();
+    }
+
+    function setFoodTypeSelectValue(val) {
+      const sel = document.getElementById('roomFoodTypeInput');
+      if (!sel) return;
+      const target = (val || '').trim();
+      for (let i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value.toLowerCase() === target.toLowerCase()) {
+          sel.selectedIndex = i;
+          return;
+        }
+      }
+      if (target.toLowerCase().includes('room only') || target.toLowerCase().includes('no breakfast') || target.toLowerCase().includes('only')) {
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value.toLowerCase().includes('room only') || sel.options[i].value.toLowerCase().includes('no breakfast')) {
+            sel.selectedIndex = i;
+            return;
+          }
+        }
+      }
+      if (target.toLowerCase().includes('dinner')) {
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value.toLowerCase().includes('dinner')) {
+            sel.selectedIndex = i;
+            return;
+          }
+        }
+      }
+      if (target.toLowerCase().includes('inclusive')) {
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value.toLowerCase().includes('inclusive')) {
+            sel.selectedIndex = i;
+            return;
+          }
+        }
+      }
+      if (target.toLowerCase().includes('breakfast')) {
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value.toLowerCase().includes('breakfast')) {
+            sel.selectedIndex = i;
+            return;
+          }
+        }
+      }
+      sel.value = 'Room only';
+    }
+
+    function handleFoodTypeChange() {
+      const sel = document.getElementById('roomFoodTypeInput');
+      if (!sel) return;
+      const val = sel.value;
+      const isNoFood = val.toLowerCase().includes('room only') || val.toLowerCase().includes('no breakfast');
+      const hasBfast = !isNoFood;
+
+      if (document.getElementById('includesBreakfastInput')) {
+        document.getElementById('includesBreakfastInput').checked = hasBfast;
+      }
+      if (document.getElementById('modalIncludesBreakfastInput')) {
+        document.getElementById('modalIncludesBreakfastInput').checked = hasBfast;
+      }
+      if (document.getElementById('pillBfast')) {
+        document.getElementById('pillBfast').style.display = hasBfast ? 'inline-block' : 'none';
+      }
+      updateTierSummaryBadges();
     }
 
     function updateTierSummaryBadges() {
@@ -4116,9 +5526,10 @@
       document.getElementById('roomModalTitle').innerText = 'Add New Hotel Room';
       document.getElementById('roomNameInput').value = '';
       document.getElementById('bedTypeInput').value = '1 Queen Bed';
-      document.getElementById('priceUsdInput').value = '75.00';
-      
-      applyRoomSizePreset('28 m²');
+      document.getElementById('priceUsdInput').value = '0';
+      if (document.getElementById('roomSizeInput')) {
+        document.getElementById('roomSizeInput').value = '';
+      }
       if (document.getElementById('totalRoomsInput')) document.getElementById('totalRoomsInput').value = '1';
       if (document.getElementById('availableUnitsInput')) document.getElementById('availableUnitsInput').value = '1';
       if (document.getElementById('maxGuestsInput')) document.getElementById('maxGuestsInput').value = '2';
@@ -4136,7 +5547,8 @@
       document.getElementById('roomStarRatingInput').value = '5';
       document.getElementById('roomRatingInput').value = '4.9';
       document.getElementById('roomReviewCountInput').value = '128';
-      document.getElementById('roomFoodTypeInput').value = 'Breakfast included';
+      setFoodTypeSelectValue('Room only');
+      handleFoodTypeChange();
       document.getElementById('roomMapUrlInput').value = (hotelInfo && hotelInfo.mapUrl) ? hotelInfo.mapUrl : 'https://maps.google.com/?q=Riverside+Blvd+Phnom+Penh';
       updateMapLinkPreview();
       const inputEl = document.getElementById('roomNumberInput');
@@ -4162,7 +5574,7 @@
       document.getElementById('priceUsdInput').value = room.priceUsd;
       
       if (document.getElementById('roomSizeInput')) {
-        document.getElementById('roomSizeInput').value = (room.roomSize || '28 m²').replace('ft²', 'm²');
+        document.getElementById('roomSizeInput').value = (room.roomSize || '').replace('ft²', 'm²');
       }
       const totalR = (room.totalRooms !== undefined && room.totalRooms !== null) ? room.totalRooms : ((room.availableUnits !== undefined && room.availableUnits !== null) ? room.availableUnits : 5);
       const availU = (room.availableUnits !== undefined && room.availableUnits !== null) ? room.availableUnits : totalR;
@@ -4199,7 +5611,8 @@
       document.getElementById('roomStarRatingInput').value = String(room.starRating || 5);
       document.getElementById('roomRatingInput').value = String(room.rating || 4.9);
       document.getElementById('roomReviewCountInput').value = String(room.reviewCount || 128);
-      document.getElementById('roomFoodTypeInput').value = room.foodType || 'Breakfast included';
+      setFoodTypeSelectValue(room.foodType || (room.includesBreakfast ? 'Breakfast included' : 'Room only'));
+      handleFoodTypeChange();
       document.getElementById('roomMapUrlInput').value = room.mapUrl || (hotelInfo && hotelInfo.mapUrl) || '';
       updateMapLinkPreview();
       document.getElementById('roomDescInput').value = room.description || '';
@@ -4257,7 +5670,10 @@
       const amenities = document.getElementById('amenitiesInput') ? document.getElementById('amenitiesInput').value.trim() : 'Free WiFi, Tea/Coffee maker, Balcony, Attached bathroom, City view';
       const freeCancellation = document.getElementById('freeCancellationInput') ? document.getElementById('freeCancellationInput').checked : true;
       const noPrepayment = document.getElementById('noPrepaymentInput') ? document.getElementById('noPrepaymentInput').checked : true;
-      const includesBreakfast = document.getElementById('includesBreakfastInput') ? document.getElementById('includesBreakfastInput').checked : false;
+      const rawFoodType = document.getElementById('roomFoodTypeInput') ? document.getElementById('roomFoodTypeInput').value.trim() : 'Room only';
+      const isRoomOnlySelection = rawFoodType.toLowerCase().includes('room only') || rawFoodType.toLowerCase().includes('no breakfast');
+      const includesBreakfast = !isRoomOnlySelection;
+      const finalFoodType = isRoomOnlySelection ? 'Room only' : rawFoodType;
       const includesMassage = document.getElementById('includesMassageInput') ? document.getElementById('includesMassageInput').checked : false;
 
       const deluxeAddon = document.getElementById('deluxePriceExtraInput') ? (parseFloat(document.getElementById('deluxePriceExtraInput').value) || 30.0) : 30.0;
@@ -4292,7 +5708,7 @@
         starRating: parseInt(document.getElementById('roomStarRatingInput').value) || 5,
         rating: parseFloat(document.getElementById('roomRatingInput').value) || 4.9,
         reviewCount: parseInt(document.getElementById('roomReviewCountInput').value) || 128,
-        foodType: document.getElementById('roomFoodTypeInput').value,
+        foodType: finalFoodType,
         mapUrl: document.getElementById('roomMapUrlInput').value.trim(),
         images: imagesString,
         description: document.getElementById('roomDescInput').value.trim()
@@ -4338,8 +5754,16 @@
       }
     }
 
-    function populateHotelProfileForm(hotel) {
+    let isHotelFormDirty = false;
+
+    function populateHotelProfileForm(hotel, force = false) {
       if (!hotel) return;
+      const form = document.getElementById('hotelProfileForm');
+      if (!force) {
+        // If user is actively typing in the form or has unsaved changes, do not overwrite inputs
+        if (form && form.contains(document.activeElement)) return;
+        if (isHotelFormDirty) return;
+      }
       document.getElementById('profHotelName').value = hotel.name || '';
       if (document.getElementById('profHotelTagline')) {
         document.getElementById('profHotelTagline').value = hotel.tagline || '';
@@ -4400,6 +5824,7 @@
       try {
         const updated = await ApiService.updateHotelInfo(payload);
         hotelInfo = updated;
+        isHotelFormDirty = false;
         // Update topbar and sidebar immediately
         if (updated) {
           document.getElementById('sidebarHotelTitle').innerText = updated.name || 'Hotel Admin';
@@ -4420,7 +5845,7 @@
       const tagline = document.getElementById('profHotelTagline')?.value.trim() || 'Premier 5-Star Riverside Retreat & Suites';
       const stars = parseInt(document.getElementById('profHotelStarRating')?.value) || 5;
       const address = document.getElementById('profHotelAddress')?.value.trim() || 'Riverside Blvd, Daun Penh, Phnom Penh';
-      const phone = document.getElementById('profHotelPhone')?.value.trim() || '023888999';
+      const phone = document.getElementById('profHotelPhone')?.value.trim() || '095 727 675';
       const email = document.getElementById('profHotelEmail')?.value.trim() || 'info@hotel.com';
       const imgUrl = document.getElementById('profHotelImage')?.value.trim() || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800';
       const facStr = document.getElementById('profHotelFacilities')?.value.trim() || '';
@@ -4548,86 +5973,200 @@
 
     let revChartInstance = null;
     let roomChartInstance = null;
+    let currentChartTimeframe = 'daily';
+    let cachedStatsForChart = null;
+    let cachedBookingsForChart = [];
+    let cachedRoomsForChart = [];
 
-    function initCharts(stats, bookings, rooms) {
-      // 1. Dynamic Monthly Revenue Chart (Aggregates real bookings by month)
+    function changeChartTimeframe(tf) {
+      currentChartTimeframe = tf;
+      ['btnChartDaily', 'btnChartHourly', 'btnChartMonthly'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.classList.remove('btn-gold', 'active', 'shadow-sm', 'text-dark');
+          btn.classList.add('btn-outline-secondary', 'border-0');
+        }
+      });
+      const activeBtn = document.getElementById(tf === 'daily' ? 'btnChartDaily' : (tf === 'hourly' ? 'btnChartHourly' : 'btnChartMonthly'));
+      if (activeBtn) {
+        activeBtn.classList.remove('btn-outline-secondary', 'border-0');
+        activeBtn.classList.add('btn-gold', 'active', 'shadow-sm', 'text-dark');
+      }
+
+      const heading = document.getElementById('revChartHeading');
+      const subtitle = document.getElementById('revChartSubtitle');
+      if (tf === 'daily') {
+        if (heading) heading.innerHTML = '<i class="fa-solid fa-calendar-day text-warning me-2"></i> Hotel Revenue &amp; Bookings (Last 7 Days by Day)';
+        if (subtitle) subtitle.innerText = 'Calculated daily from real guest bookings & payments';
+      } else if (tf === 'hourly') {
+        if (heading) heading.innerHTML = '<i class="fa-solid fa-clock text-warning me-2"></i> Today\'s Real-Time Bookings by Time';
+        if (subtitle) subtitle.innerText = 'Hourly performance timeline for today';
+      } else {
+        if (heading) heading.innerHTML = '<i class="fa-solid fa-calendar-days text-warning me-2"></i> Hotel Revenue Monthly Growth';
+        if (subtitle) subtitle.innerText = 'Monthly aggregated booking revenue';
+      }
+
+      renderRevenueChart(cachedStatsForChart, cachedBookingsForChart);
+    }
+
+    function renderRevenueChart(stats, bookings) {
       const ctxRev = document.getElementById('revenueChart');
-      if (ctxRev) {
-        if (revChartInstance) revChartInstance.destroy();
+      if (!ctxRev) return;
+      if (revChartInstance) revChartInstance.destroy();
 
-        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const now = new Date();
-        const labels = [];
-        const monthlyData = [];
+      const labels = [];
+      const revenueData = [];
+      const countData = [];
+      const now = new Date();
 
-        // Build last 6 months timeline: e.g. May -> Oct
-        for (let i = 5; i >= 0; i--) {
-          const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-          labels.push(monthNames[d.getMonth()]);
+      if (currentChartTimeframe === 'daily') {
+        // Build last 7 days timeline: e.g. Day -6 to Today
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+          const y = d.getFullYear();
+          const m = String(d.getMonth() + 1).padStart(2, '0');
+          const day = String(d.getDate()).padStart(2, '0');
+          const dateIso = `${y}-${m}-${day}`;
+          const dayName = (i === 0) ? 'Today' : (i === 1 ? 'Yesterday' : d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }));
+          labels.push(dayName);
 
-          // Filter actual bookings matching month & year
-          const totalPaidForMonth = (bookings || []).filter(b => {
+          const dayBookings = (bookings || []).filter(b => {
             if (b.status === 'CANCELLED') return false;
-            const bDate = b.createdAt ? new Date(b.createdAt) : (b.checkIn ? new Date(b.checkIn) : null);
-            if (!bDate) return false;
-            return bDate.getMonth() === d.getMonth() && bDate.getFullYear() === d.getFullYear();
-          }).reduce((sum, b) => {
-            const paid = b.amountPaid !== undefined && b.amountPaid !== null && Number(b.amountPaid) > 0 
-              ? Number(b.amountPaid) 
+            let bIso = '';
+            if (b.createdAt) {
+              const bd = new Date(b.createdAt);
+              bIso = `${bd.getFullYear()}-${String(bd.getMonth() + 1).padStart(2, '0')}-${String(bd.getDate()).padStart(2, '0')}`;
+            } else if (b.checkIn) {
+              bIso = String(b.checkIn).trim();
+            }
+            return bIso === dateIso;
+          });
+
+          const daySum = dayBookings.reduce((sum, b) => {
+            const paid = (b.amountPaid !== undefined && b.amountPaid !== null && Number(b.amountPaid) > 0)
+              ? Number(b.amountPaid)
               : (b.status === 'COMPLETED' || b.status === 'CHECKED_IN' || b.paymentStatus === 'PAID' ? Number(b.finalPrice || b.totalPrice || 0) : 0);
             return sum + paid;
           }, 0);
 
-          monthlyData.push(Math.round(totalPaidForMonth * 100) / 100);
+          revenueData.push(Math.round(daySum * 100) / 100);
+          countData.push(dayBookings.length);
         }
+      } else if (currentChartTimeframe === 'hourly') {
+        // Today by Time Slots: 06:00 AM, 09:00 AM, 12:00 PM, 03:00 PM, 06:00 PM, 09:00 PM, 11:59 PM
+        const todayIso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const slots = [
+          { label: '06:00 AM', startH: 0, endH: 6 },
+          { label: '09:00 AM', startH: 6, endH: 9 },
+          { label: '12:00 PM', startH: 9, endH: 12 },
+          { label: '03:00 PM', startH: 12, endH: 15 },
+          { label: '06:00 PM', startH: 15, endH: 18 },
+          { label: '09:00 PM', startH: 18, endH: 21 },
+          { label: '11:59 PM', startH: 21, endH: 24 }
+        ];
 
-        // If current month has 0 but stats has revenue, fill current month
-        const currentTotal = Number(stats.totalRevenueUsd || 0);
-        if (monthlyData.every(v => v === 0) && currentTotal > 0) {
-          monthlyData[monthlyData.length - 1] = currentTotal;
+        const todayBookings = (bookings || []).filter(b => {
+          if (b.status === 'CANCELLED') return false;
+          let bIso = '';
+          if (b.createdAt) {
+            const bd = new Date(b.createdAt);
+            bIso = `${bd.getFullYear()}-${String(bd.getMonth() + 1).padStart(2, '0')}-${String(bd.getDate()).padStart(2, '0')}`;
+          }
+          return bIso === todayIso;
+        });
+
+        slots.forEach(slot => {
+          labels.push(slot.label);
+          const slotBookings = todayBookings.filter(b => {
+            if (!b.createdAt) return false;
+            const h = new Date(b.createdAt).getHours();
+            return h >= slot.startH && h < slot.endH;
+          });
+          const slotSum = slotBookings.reduce((sum, b) => {
+            const paid = (b.amountPaid !== undefined && b.amountPaid !== null && Number(b.amountPaid) > 0)
+              ? Number(b.amountPaid)
+              : (b.status === 'COMPLETED' || b.status === 'CHECKED_IN' || b.paymentStatus === 'PAID' ? Number(b.finalPrice || b.totalPrice || 0) : 0);
+            return sum + paid;
+          }, 0);
+          revenueData.push(Math.round(slotSum * 100) / 100);
+          countData.push(slotBookings.length);
+        });
+      } else {
+        // Monthly View
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        for (let i = 5; i >= 0; i--) {
+          const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+          labels.push(monthNames[d.getMonth()]);
+          const monthBookings = (bookings || []).filter(b => {
+            if (b.status === 'CANCELLED') return false;
+            const bDate = b.createdAt ? new Date(b.createdAt) : (b.checkIn ? new Date(b.checkIn) : null);
+            if (!bDate) return false;
+            return bDate.getMonth() === d.getMonth() && bDate.getFullYear() === d.getFullYear();
+          });
+          const monthSum = monthBookings.reduce((sum, b) => {
+            const paid = (b.amountPaid !== undefined && b.amountPaid !== null && Number(b.amountPaid) > 0)
+              ? Number(b.amountPaid)
+              : (b.status === 'COMPLETED' || b.status === 'CHECKED_IN' || b.paymentStatus === 'PAID' ? Number(b.finalPrice || b.totalPrice || 0) : 0);
+            return sum + paid;
+          }, 0);
+          revenueData.push(Math.round(monthSum * 100) / 100);
+          countData.push(monthBookings.length);
         }
+      }
 
-        revChartInstance = new Chart(ctxRev, {
-          type: 'line',
-          data: {
-            labels: labels,
-            datasets: [
-              {
-                label: 'Hotel Bookings Revenue ($)',
-                data: monthlyData,
-                borderColor: '#c69214',
-                backgroundColor: 'rgba(198, 146, 20, 0.12)',
-                fill: true,
-                tension: 0.35,
-                borderWidth: 2.5,
-                pointBackgroundColor: '#c69214',
-                pointRadius: 4
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              legend: { position: 'top' },
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return `Revenue: $${Number(context.raw).toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
-                  }
-                }
-              }
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-                ticks: {
-                  callback: function(val) { return '$' + val; }
+      revChartInstance = new Chart(ctxRev, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Hotel Revenue ($)',
+              data: revenueData,
+              borderColor: '#c69214',
+              backgroundColor: 'rgba(198, 146, 20, 0.15)',
+              fill: true,
+              tension: 0.35,
+              borderWidth: 2.5,
+              pointBackgroundColor: '#c69214',
+              pointBorderColor: '#ffffff',
+              pointBorderWidth: 2,
+              pointRadius: 5,
+              pointHoverRadius: 7
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'top' },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  const idx = context.dataIndex;
+                  const c = countData[idx] || 0;
+                  return ` Revenue: $${Number(context.raw).toLocaleString('en-US', { minimumFractionDigits: 2 })} (${c} booking${c === 1 ? '' : 's'})`;
                 }
               }
             }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: function(val) { return '$' + val; }
+              }
+            }
           }
-        });
-      }
+        }
+      });
+    }
+
+    function initCharts(stats, bookings, rooms) {
+      cachedStatsForChart = stats;
+      cachedBookingsForChart = bookings || [];
+      cachedRoomsForChart = rooms || [];
+      renderRevenueChart(stats, bookings);
 
       // 2. Dynamic Room Booking & Type Distribution Chart
       const ctxRoom = document.getElementById('roomTypeChart');
@@ -4680,6 +6219,11 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      const hForm = document.getElementById('hotelProfileForm');
+      if (hForm) {
+        hForm.addEventListener('input', () => { isHotelFormDirty = true; });
+        hForm.addEventListener('change', () => { isHotelFormDirty = true; });
+      }
       loadPortalData();
       const tModal = document.getElementById('tierConfigModal');
       if (tModal) {

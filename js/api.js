@@ -2,7 +2,10 @@
 // HOTEL BOOKING SYSTEM - API CLIENT & STATE MANAGEMENT
 // ==============================================================
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_HOST = (typeof window !== 'undefined' && window.location && window.location.hostname)
+    ? window.location.hostname
+    : 'localhost';
+const API_BASE_URL = `http://${API_HOST}:8080/api`;
 
 // Current session helpers
 const Auth = {
@@ -317,6 +320,27 @@ const ApiService = {
 
     async getBookingById(bookingId) {
         return apiFetch(`/bookings/${bookingId}`);
+    },
+
+    async getReviews() {
+        try {
+            const res = await fetch(`${API_BASE_URL}/reviews`, { cache: 'no-store' });
+            if (res.ok) {
+                const list = await res.json();
+                if (Array.isArray(list)) return list;
+            }
+        } catch (e) {
+            console.warn('Direct fetch /reviews failed:', e);
+        }
+        try {
+            const data = await apiFetch('/reviews');
+            if (Array.isArray(data)) return data;
+        } catch (_) {}
+        try {
+            const data = await apiFetch('/admin/reviews');
+            if (Array.isArray(data)) return data;
+        } catch (_) {}
+        return [];
     }
 };
 
